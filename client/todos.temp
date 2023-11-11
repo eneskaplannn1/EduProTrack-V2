@@ -1,0 +1,31 @@
+
+-*-  client
+
+- ana still hatlarını belirle önce
+    1. güzel bir logo tasarlayabilirim
+    2. stilleri düzelt + stillleri responsive yap
+    3. login sayfasının stillerini güzelleştir (resimlerle daha canlı güzel bir hale getir)
+    4. dark mode ekle
+
+- küçük cssler
+   1. sidebar hover efekti daha güzel olmalı
+
+- uygulamanın mantık hataları ve küçük bugları
+    1. admin add student a basınca problem oluşuyor 
+    2. admin students a bakınca classname kısmı boş görünüyor
+    3. adminden öğretmen ekleme özelliğini kaldır çünkü class lazım öğretmene
+    4. admine ödevi mutate etme ve silme özelliğini kaldır ????
+    5. admine class sayfasında ödev verme özelliğini kaldır , öğrenci ekleme özelliği çalışabilecek haldeyse elleme
+
+- User experince için
+    1. öğretmen ödev verme tuşuna basınca 2 kere tıklama yapması gerekiyor onu düzelt tıklama sayısı teke düşsün
+
+- New features
+    1. kullanıcıların fotoğraf ekleme özelliği yok
+    2. react-error-boundaries
+    3. authenticationu localstorage dan cookie ye çevir
+
+-*- server
+teacher student ve admin modelini tek bir modele düşür
+
+
