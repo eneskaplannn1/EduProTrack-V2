@@ -6,7 +6,7 @@ import { styled } from "styled-components";
 const StyledContainer = styled.div`
   height: 100vh;
   display: grid;
-  grid-template-columns: 10rem 1fr;
+  grid-template-columns: 1fr 4fr;
   grid-template-rows: 4rem 1fr;
 `;
 const StyledMain = styled.div`

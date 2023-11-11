@@ -1,4 +1,4 @@
-import FormElement from "./FormElement";
+import FormElement from "../FormRowVertical";
 import Button from "../Button/Button";
 import ButtonContainer from "../Button/ButtonContainer";
 import StyledFormLayout from "./FormLayout";

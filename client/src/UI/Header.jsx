@@ -4,6 +4,7 @@ import User from "./User";
 
 import { HiOutlineUser } from "react-icons/hi2";
 import { HiArrowRightOnRectangle } from "react-icons/hi2";
+import { BsMoon } from "react-icons/bs";
 import { useAuth } from "../context/AuthProvider";
 import { toast } from "react-hot-toast";
 
@@ -26,6 +27,7 @@ function Header() {
         <NavLink to="/account">
           <HiOutlineUser />
         </NavLink>
+        <BsMoon />
 
         <button onClick={handleLogout}>
           <HiArrowRightOnRectangle />

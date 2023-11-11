@@ -1,104 +1,147 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
+  :root {
+    --color-grey-0: #18212f;
+    --color-grey-50: #111827;
+    --color-grey-100: #1f2937;
+    --color-grey-200: #374151;
+    --color-grey-300: #4b5563;
+    --color-grey-400: #6b7280;
+    --color-grey-500: #9ca3af;
+    --color-grey-600: #d1d5db;
+    --color-grey-700: #e5e7eb;
+    --color-grey-800: #f3f4f6;
+    --color-grey-900: #f9fafb;
 
-:root {
+    --color-blue-100: #e0f2fe;
+    --color-blue-700: #0369a1;
 
-    // chose colors
-}
+    --color-green-100: #b6f3bc;
+    --color-green-700: #51e15f;
 
+    --color-dgreen-100: #dcfce7;
+    --color-dgreen-700: #15803d;
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+    --color-yellow-100: #fef9c3;
+    --color-yellow-700: #a16207;
 
-  /* Creating animations for dark mode */
-  transition: background-color 0.3s, border 0.3s;
-}
+    --color-silver-100: #e5e7eb;
+    --color-silver-700: #374151;
 
-html {
-  font-size: 62.5%;
-}
+    --color-indigo-100: #e0e7ff;
+    --color-indigo-700: #4338ca;
 
-body {
-  font-family: "Poppins", sans-serif;
-  color: var(--color-grey-700);
+    --color-red-100: #fee2e2;
+    --color-red-700: #b91c1c;
+    --color-red-800: #991b1b;
 
-  transition: color 0.3s, background-color 0.3s;
-  min-height: 100vh;
-  line-height: 1.5;
-  font-size: 1.6rem;
-}
+    --backdrop-color: rgba(255, 255, 255, 0.1);
 
-input,
-button,
-textarea,
-select {
-  font: inherit;
-  color: inherit;
-}
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0px 0.6rem 2.4rem rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 2.4rem 3.2rem rgba(0, 0, 0, 0.12);
 
-button {
-  cursor: pointer;
-}
+    --border-radius-tiny: 4px;
+    --border-radius-sm: 8px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 16px;
+  }
 
-*:disabled {
-  cursor: not-allowed;
-}
+  /* green 
+   * chose colors
+   */
 
-select:disabled,
-input:disabled {
-  background-color: var(--color-grey-200);
-  color: var(--color-grey-500);
-}
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 
-input:focus,
-button:focus,
-textarea:focus,
-select:focus {
-  outline: 2px solid var(--color-brand-600);
-  outline-offset: -1px;
-}
+    /* Creating animations for dark mode */
+    transition: background-color 0.3s, border 0.3s;
+  }
 
-/* Parent selector, finally 😃 */
-button:has(svg) {
-  line-height: 0;
-}
+  html {
+    font-size: 62.5%;
+  }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-a.active,
-a.active svg {
-  color: rgb(144, 229, 17);
-}
+  body {
+    font-family: "Poppins", sans-serif;
 
-ul {
-  list-style: none;
-}
+    transition: color 0.3s, background-color 0.3s;
+    min-height: 100vh;
+    line-height: 1.5;
+    font-size: 1.6rem;
+  }
 
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
-  hyphens: auto;
-}
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+    color: inherit;
+  }
 
-img {
-  max-width: 100%;
+  button {
+    cursor: pointer;
+  }
 
-  /* For dark mode */
-  filter: grayscale(var(--image-grayscale)) opacity(var(--image-opacity));
-}
+  *:disabled {
+    cursor: not-allowed;
+  }
 
+  select:disabled,
+  input:disabled {
+    background-color: var(--color-grey-700);
+    color: var(--color-grey-200);
+  }
+
+  input:focus,
+  button:focus,
+  textarea:focus,
+  select:focus {
+    outline: 2px solid #ffa41a;
+    outline-offset: -1px;
+  }
+
+  /* Parent selector, finally 😃 */
+  button:has(svg) {
+    line-height: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  a.active,
+  a.active svg {
+    color: rgb(144, 229, 17);
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  img {
+    max-width: 100%;
+
+    /* For dark mode */
+    filter: grayscale(var(--image-grayscale)) opacity(var(--image-opacity));
+  }
 `;
 
 export default GlobalStyles;

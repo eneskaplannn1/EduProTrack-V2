@@ -2,13 +2,14 @@
 -*-  client
 
 - ana still hatlarını belirle önce
-    1. güzel bir logo tasarlayabilirim
+-*- 1. güzel bir logo tasarlayabilirim
     2. stilleri düzelt + stillleri responsive yap
-    3. login sayfasının stillerini güzelleştir (resimlerle daha canlı güzel bir hale getir)
+-*- 3. login sayfasının stillerini güzelleştir (resimlerle daha canlı güzel bir hale getir) 
     4. dark mode ekle
 
 - küçük cssler
    1. sidebar hover efekti daha güzel olmalı
+   
 
 - uygulamanın mantık hataları ve küçük bugları
     1. admin add student a basınca problem oluşuyor 
@@ -25,6 +26,20 @@
     2. react-error-boundaries
     3. authenticationu localstorage dan cookie ye çevir
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 -*- server
 teacher student ve admin modelini tek bir modele düşür
 

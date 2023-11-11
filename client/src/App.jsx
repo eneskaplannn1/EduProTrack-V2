@@ -67,7 +67,6 @@ function App() {
             >
               <Route index element={<Navigate replace to="profile" />} />
 
-              {/* everyone  */}
               <Route path="profile" element={<UserProfile />} />
               <Route path="homeworks" element={<Homework />} />
               <Route
@@ -75,12 +74,6 @@ function App() {
                 element={<HomeworkDetail />}
               />
               <Route path="account" element={<Account />} />
-              {/* maybe I will implement these some time in the future
-              <Route path="settings" element={<Settings />} />
-              <Route path="notifications" element={<Notification />} />
-              <Route path="messages" element={<Message />} />
-              */}
-              {/* admin,teacher */}
 
               <Route
                 path="students"
@@ -134,9 +127,9 @@ function App() {
                 }
               />
             </Route>
+
             <Route path="login" element={<Login />} />
             <Route path="unAuthorized" element={<UnAuthorized />} />
-            <Route path="signup" element={<Signup />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </BrowserRouter>

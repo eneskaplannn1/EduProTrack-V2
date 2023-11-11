@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 
 import Button from "../../UI/Button/Button";
 import ButtonContainer from "../../UI/Button/ButtonContainer";
-import FormElement from "../../UI/form/FormElement";
+import FormElement from "../../UI/FormRowVertical";
 import StyledFormLayout from "../../UI/form/FormLayout";
 
 import useUpdateUserData from "../../hooks/useUpdateUserData";

@@ -10,7 +10,7 @@ const sizes = {
   `,
   medium: css`
     font-size: 1.4rem;
-    padding: 1.2rem 1.6rem;
+    padding: 0.6rem 1.2rem;
     font-weight: 500;
   `,
   large: css`
@@ -21,19 +21,15 @@ const sizes = {
 };
 
 const variations = {
-  add: css`
-    background-color: #fff;
-    color: #1f1f35;
+  green: css`
+    background: #40944a;
+    color: #fff;
 
     &:hover {
-      color: #2bee4f;
+      background-color: #18c429;
     }
   `,
-  positive: css`
-    background-color: #2bee4f;
-    color: #fff;
-  `,
-  negative: css`
+  red: css`
     background-color: #fa5252;
     color: #fff;
 
@@ -41,37 +37,12 @@ const variations = {
       background-color: #c92a2a;
     }
   `,
-  update: css`
+  blue: css`
     background: #4f46e5;
     color: #fff;
 
     &:hover {
       background-color: #3730a3;
-    }
-  `,
-  login: css`
-    background: #4f46e5;
-    color: #fff;
-
-    &:hover {
-      background-color: #3730a3;
-    }
-  `,
-  delete: css`
-    background-color: #fa5252;
-    color: #fff;
-
-    &:hover {
-      background-color: #c92a2a;
-    }
-  `,
-  cancel: css`
-    background-color: #18212f;
-    border: 1px solid #374151;
-    color: white;
-
-    &:hover {
-      background-color: #131a23;
     }
   `,
 };

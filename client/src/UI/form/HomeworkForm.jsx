@@ -1,5 +1,5 @@
 import StyledFormLayout from "./FormLayout";
-import FormElement from "./FormElement";
+import FormElement from "../FormRowVertical";
 import ButtonContainer from "../Button/ButtonContainer";
 import Button from "../Button/Button";
 import useEditCreateHomework from "../../hooks/useEditCreateHomework";

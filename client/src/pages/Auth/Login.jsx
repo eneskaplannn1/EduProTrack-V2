@@ -1,70 +1,81 @@
+import useLogin from "../../hooks/useLogin";
 import { styled } from "styled-components";
 
 import Button from "../../UI/Button/Button";
-import ButtonContainer from "../../UI/Button/ButtonContainer";
-import FormElement from "../../UI/form/FormElement";
-import StyledFormLayout from "../../UI/form/FormLayout";
 
-import useLogin from "../../hooks/useLogin";
-
-const StyledContainer = styled.div`
-  background-color: #18212f;
-  color: #fff;
-
-  width: 80vw;
-  max-width: 80vw;
-  min-height: 90vh;
-  margin: 1rem auto;
-  padding: 2rem;
-  border-radius: 10px;
-  text-align: center;
-`;
+import FormRowVertical from "../../UI/FormRowVertical";
+import Input from "../../UI/Input";
 
 function Login() {
   const { register, errors, handleSubmit, onSubmitForm, isLoading } =
     useLogin();
 
   return (
-    <StyledContainer>
-      <h2>Login Page </h2>
-      <StyledFormLayout onSubmit={handleSubmit(onSubmitForm)}>
-        <FormElement>
-          <label htmlFor="email">Email:</label>
-          <input
+    <StyledAuthContainer>
+      <StyledLoginImageContainer>
+        <img src="/login2.jpg" />
+      </StyledLoginImageContainer>
+      <StyledLoginForm onSubmit={handleSubmit(onSubmitForm)}>
+        <StyledFormHead>
+          <img src="/logo-dark.png" />
+          <h3>Login</h3>
+        </StyledFormHead>
+        <FormRowVertical label="Email" error={errors?.email?.message}>
+          <Input
             disabled={isLoading}
             type="email"
             id="email"
             {...register("email", { required: "Enter your email" })}
           />
-          {errors?.email && <div>{errors.email.message}</div>}
-        </FormElement>
-        <FormElement>
-          <label htmlFor="password">Password:</label>
-          <input
+        </FormRowVertical>
+        <FormRowVertical label="Password" error={errors?.password?.message}>
+          <Input
             disabled={isLoading}
             type="password"
             id="password"
             {...register("password", { required: "Enter your password" })}
           />
-          {errors?.password && <div>{errors.password.message}</div>}
-        </FormElement>
-        <ButtonContainer>
-          <Button disabled={isLoading} type="small" variation="login">
-            {isLoading ? "Logging In..." : "Login"}
-          </Button>
-        </ButtonContainer>
-        {/* <div className={classes.signupForgot}>
-          <a className={classes.signupLink} href={`/signup`}>
-            Sign up
-          </a>
-          <a className={classes.forgotPassword} href="/forgotPassword">
-            Forgot Password?
-          </a>
-        </div> */}
-        {/* <button className={classes.loginButton}>Login</button> */}
-      </StyledFormLayout>
-    </StyledContainer>
+        </FormRowVertical>
+        <Button disabled={isLoading} size="medium" variation="blue">
+          {isLoading ? "Logging In..." : "Login"}
+        </Button>
+      </StyledLoginForm>
+    </StyledAuthContainer>
   );
 }
 
 export default Login;
+
+const StyledAuthContainer = styled.div`
+  display: grid;
+  grid-template-columns: 6fr 5fr;
+  max-height: 100vh;
+
+  color: var(--color-grey-0);
+`;
+
+const StyledLoginForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 4rem;
+  gap: 1.4rem;
+
+  font-size: 21px;
+`;
+const StyledFormHead = styled.div`
+  width: auto;
+  text-align: center;
+
+  img {
+    height: 8rem;
+    border-radius: 50%;
+  }
+`;
+
+const StyledLoginImageContainer = styled.div`
+  display: flex;
+  img {
+    height: 100vh;
+    width: 100%;
+  }
+`;
