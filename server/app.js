@@ -24,10 +24,7 @@ app.set("views", path.join(__dirname, "views"));
 
 app.use(
   cors({
-    origin:
-      process.env.NODE_ENV === "development"
-        ? ["http://localhost:5173"]
-        : ["https://eduprotrack-frontend.onrender.com/"],
+    origin: true,
     methods: ["POST", "PATCH", "GET", "DELETE", "PUT"],
   })
 );

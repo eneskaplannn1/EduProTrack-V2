@@ -3,18 +3,6 @@ import Header from "./Header";
 import SideBar from "./Sidebar";
 import { styled } from "styled-components";
 
-const StyledContainer = styled.div`
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-  grid-template-rows: 4rem 1fr;
-`;
-const StyledMain = styled.div`
-  padding: 2rem;
-  background-color: #111827;
-  overflow: auto;
-`;
-
 function AppLayout() {
   return (
     <StyledContainer>
@@ -28,3 +16,16 @@ function AppLayout() {
 }
 
 export default AppLayout;
+
+const StyledContainer = styled.div`
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 2fr 7fr;
+  color: var(--color-grey-900);
+`;
+
+const StyledMain = styled.div`
+  padding: 2rem;
+  background-color: var(--color-grey-0);
+  overflow: auto;
+`;

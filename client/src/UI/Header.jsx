@@ -1,40 +1,29 @@
-import { NavLink, useNavigate } from "react-router-dom";
-import classes from "./Header.module.css";
-import User from "./User";
-
-import { HiOutlineUser } from "react-icons/hi2";
-import { HiArrowRightOnRectangle } from "react-icons/hi2";
-import { BsMoon } from "react-icons/bs";
 import { useAuth } from "../context/AuthProvider";
-import { toast } from "react-hot-toast";
+import { styled } from "styled-components";
+import HeaderMenu from "./HeaderMenu";
 
 function Header() {
-  const navigate = useNavigate();
   const { logout, user } = useAuth();
 
-  function handleLogout() {
-    toast.success("logged out successfully");
-    logout();
-    navigate("/login");
-  }
-
   return (
-    <div className={classes.header}>
+    <StyledHeader>
       <h3>School Management System</h3>
-      {user.role === "Admin" ? <div className={classes.hero}>Admin</div> : ""}
-      <div className={classes.container}>
-        <User />
-        <NavLink to="/account">
-          <HiOutlineUser />
-        </NavLink>
-        <BsMoon />
-
-        <button onClick={handleLogout}>
-          <HiArrowRightOnRectangle />
-        </button>
-      </div>
-    </div>
+      {user.role === "Admin" ? <div style={{ color: "red" }}>Admin</div> : ""}
+      <HeaderMenu logout={logout} />
+    </StyledHeader>
   );
 }
 
 export default Header;
+
+const StyledHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-column: 1/3;
+
+  padding: 1rem 2rem;
+
+  background-color: var(--color-grey-50);
+  border-bottom: 1px solid var(--color-grey-100);
+`;
