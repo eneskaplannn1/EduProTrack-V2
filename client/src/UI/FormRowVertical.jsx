@@ -26,7 +26,7 @@ const StyledFormRow = styled.div`
 
 const Label = styled.label`
   text-align: left;
-  color: var(--color-grey-100);
+  color: var(--color-grey-900);
   font-weight: 500;
 `;
 

@@ -11,8 +11,8 @@ const variations = {
 
 const StyledButtonContainer = styled.div`
   display: flex;
-  align-items: center;
   justify-content: flex-end;
+  align-items: center;
   gap: 0.6rem;
 
   ${(props) => variations[props.variation]}

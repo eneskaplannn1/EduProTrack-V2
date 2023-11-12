@@ -16,7 +16,7 @@ const StyledContainer = styled.div`
   gap: 2rem;
 `;
 const StyledClass = styled.div`
-  background-color: #28334d;
+  background-color: var(--color-grey-100);
   border-radius: 1rem;
   padding: 1rem 0.2rem;
   width: 300px;

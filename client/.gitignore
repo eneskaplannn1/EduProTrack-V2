@@ -13,6 +13,7 @@ dist-ssr
 *.local
 
 todos.txt
+todos.temp
 
 # Editor directories and files
 .vscode/*

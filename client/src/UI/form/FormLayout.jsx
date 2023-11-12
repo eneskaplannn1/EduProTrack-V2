@@ -6,8 +6,8 @@ const StyledFormLayout = styled.form`
   padding: 1.8rem;
   gap: 0.8rem;
   border-radius: 8px;
-  color: #fff;
-  background-color: #18212f;
+  color: var(--color-grey-0);
+  background-color: var(--color-grey-50);
 `;
 
 export default StyledFormLayout;

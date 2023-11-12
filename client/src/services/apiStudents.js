@@ -3,7 +3,15 @@ import customRequst from "../utils/customRequest";
 export const getStudents = async function () {
   try {
     const res = await customRequst.get(`/students`);
-    // console.log(res);
+
+    return res;
+  } catch (err) {
+    throw new Error(err);
+  }
+};
+export const getStudent = async function (id) {
+  try {
+    const res = await customRequst.get(`/students/${id}`);
     return res;
   } catch (err) {
     throw new Error(err);
@@ -13,14 +21,6 @@ export const getStudents = async function () {
 export const getTeachersStudent = async function (id) {
   try {
     return await customRequst.get(`/teachers/${id}/students`);
-  } catch (err) {
-    throw new Error(err);
-  }
-};
-
-export const getStudent = async function (id) {
-  try {
-    return await customRequst.get(`/students/${id}`);
   } catch (err) {
     throw new Error(err);
   }
@@ -44,7 +44,6 @@ export const updateStudent = async function ({ data, id }) {
 };
 
 export const createStudent = async function ({ data }) {
-  // console.log(data);
   try {
     const res = await customRequst.post(`/students`, data);
     return res;

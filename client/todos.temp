@@ -5,18 +5,22 @@
 -*- 1. güzel bir logo tasarlayabilirim
 -*- 2. stilleri düzelt + stillleri responsive yap
 -*- 3. login sayfasının stillerini güzelleştir (resimlerle daha canlı güzel bir hale getir) 
-    
 
-   
 
 - uygulamanın mantık hataları ve küçük bugları
-    1. admin add student a basınca problem oluşuyor 
-    2. admin students a bakınca classname kısmı boş görünüyor
-    3. adminden öğretmen ekleme özelliğini kaldır çünkü class lazım öğretmene
-    4. admine ödevi mutate etme ve silme özelliğini kaldır ????
-    5. admine class sayfasında ödev verme özelliğini kaldır , öğrenci ekleme özelliği çalışabilecek haldeyse elleme
-    6. öğretmen class kısmına basınca kendi detailini gör butonunu görmemeli yoksa unAuth a atılıyor
-    7. öğretmen ödev verme tuşuna basınca 2 kere tıklama yapması gerekiyor onu düzelt tıklama sayısı teke düşsün
+-*- 1. admin add student a basınca problem oluşuyor 
+-*- 2. admin students a bakınca classname kısmı boş görünüyor // 
+      * sorunu çözdüm sebebi admin de değilmiş kullanıcının class özelliği yokmuş
+-*- 3. adminden öğretmen ekleme özelliğini kaldır çünkü class lazım öğretmene
+-*- 4. admine ödevi mutate etme ve silme özelliğini kaldır
+      * gerek yok böyle bir şey yapmaya
+-*- 5. admine class sayfasında ödev verme özelliğini kaldır , öğrenci ekleme özelliği çalışabilecek haldeyse elleme
+      * kaldırmadım aksine düzelttim
+-*- 6. öğretmen class kısmına basınca kendi detailini gör butonunu görmemeli yoksa unAuth a atılıyor
+-*- 7. öğretmen ödev verme tuşuna basınca 2 kere tıklama yapması gerekiyor onu düzelt tıklama sayısı teke düşsün
+
+
+
 
 
 
@@ -26,6 +30,7 @@
 -*- 2. react-error-boundaries
     3. authenticationu localstorage dan cookie ye çevir
     4. dark mode ekle
+    5. componentleri daha alt componentlere ayırmalıyım
 
 
 

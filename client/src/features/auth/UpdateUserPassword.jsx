@@ -9,13 +9,6 @@ import useUpdateUserPassword from "../../hooks/useUpdateUserPassword";
 import FormRow from "../../UI/FormRow";
 import Input from "../../UI/Input";
 
-const StyledDiv = styled.div`
-  margin: 1rem 0;
-
-  h4 {
-    margin-bottom: 1rem;
-  }
-`;
 function UpdatePasswordForm() {
   const {
     handleSubmitForm,
@@ -74,3 +67,11 @@ function UpdatePasswordForm() {
 }
 
 export default UpdatePasswordForm;
+
+const StyledDiv = styled.div`
+  margin: 1rem 0;
+
+  h4 {
+    margin-bottom: 1rem;
+  }
+`;

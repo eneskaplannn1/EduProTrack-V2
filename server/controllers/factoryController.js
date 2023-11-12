@@ -17,7 +17,6 @@ exports.getAll = (Model) =>
       .paginate();
 
     const doc = await feautures.query;
-    // console.log(doc);
     res.status(200).json({
       status: "success",
       results: doc.length,
@@ -28,6 +27,7 @@ exports.getAll = (Model) =>
 exports.getOne = (Model, ...Populate) =>
   catchAsync(async (req, res, next) => {
     let query = Model.findById(req.params.id);
+
     if (Populate) query = query.populate(Populate);
     const doc = await query;
     if (!doc) return next(new AppError("No document find by that id ", 404));

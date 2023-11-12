@@ -25,11 +25,13 @@ function StudentList({ user }) {
       <StyledListHead variation="student">
         <li>Student Avatar</li>
         <li>Student Name</li>
-        <NavLink to={`/classes/${user.class}`}>
-          <Button variation="blue" size="large">
-            Add Student
-          </Button>
-        </NavLink>
+        {user.role === "Teacher" && (
+          <NavLink to={`/classes/${user.class}`}>
+            <Button variation="blue" size="large">
+              Add Student
+            </Button>
+          </NavLink>
+        )}
       </StyledListHead>
       <StudentsTable students={data?.data?.doc} />
     </Fragment>

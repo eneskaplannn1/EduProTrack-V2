@@ -4,17 +4,59 @@ const GlobalStyles = createGlobalStyle`
 
 :root {
 
---color-grey-0: #111827;
---color-grey-50: #18212f;
---color-grey-100: #1e293a;
---color-grey-200: #374151;
---color-grey-300: #4b5563;
---color-grey-400: #6b7280;
---color-grey-500: #9ca3af;
---color-grey-600: #d1d5db;
---color-grey-700: #e5e7eb;
---color-grey-800: #f3f4f6;
---color-grey-900: #f9fafb;
+  &, &.light-mode {
+  /* Grey */
+  --color-grey-900: #18212f;
+  --color-grey-800: #111827;
+  --color-grey-700: #1f2937;
+  --color-grey-600: #374151;
+  --color-grey-500: #4b5563;
+  --color-grey-400: #6b7280;
+  --color-grey-300: #9ca3af;
+  --color-grey-200: #d1d5db;
+  --color-grey-100: #e5e7eb;
+  --color-grey-50: #f9fafb;
+  --color-grey-0: #f3f4f6;
+
+  --color-blue-100: #e0f2fe;
+  --color-blue-700: #0369a1;
+  --color-green-100: #dcfce7;
+  --color-green-700: #15803d;
+  --color-yellow-100: #fef9c3;
+  --color-yellow-700: #a16207;
+  --color-silver-100: #e5e7eb;
+  --color-silver-700: #374151;
+  --color-indigo-100: #e0e7ff;
+  --color-indigo-700: #4338ca;
+
+  --color-red-100: #fee2e2;
+  --color-red-700: #b91c1c;
+  --color-red-800: #991b1b;
+
+  --backdrop-color: rgba(255, 255, 255, 0.1);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0px 0.6rem 2.4rem rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 2.4rem 3.2rem rgba(0, 0, 0, 0.12);
+  
+
+  --image-grayscale: 0;
+  --image-opacity: 100%;
+  }
+
+&.dark-mode {
+  
+  --color-grey-0: #111827;
+  --color-grey-50: #18212f;
+  --color-grey-100: #1e293a;
+  --color-grey-200: #374151;
+  --color-grey-300: #4b5563;
+  --color-grey-400: #6b7280;
+  --color-grey-500: #9ca3af;
+  --color-grey-600: #d1d5db;
+  --color-grey-700: #e5e7eb;
+  --color-grey-800: #f3f4f6;
+  --color-grey-900: #f9fafb;
 
   --color-blue-100: #e0f2fe;
   --color-blue-700: #0369a1;
@@ -37,6 +79,11 @@ const GlobalStyles = createGlobalStyle`
   --color-red-100: #fee2e2;
   --color-red-700: #b91c1c;
   --color-red-800: #991b1b;
+}
+
+
+
+
   
   --color-brand-50: #eef2ff;
   --color-brand-100: #e0e7ff;
@@ -49,18 +96,10 @@ const GlobalStyles = createGlobalStyle`
 
   --backdrop-color: rgba(255, 255, 255, 0.1);
 
-
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0px 0.6rem 2.4rem rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 2.4rem 3.2rem rgba(0, 0, 0, 0.12);
-
-
   --border-radius-tiny: 4px;
   --border-radius-sm: 8px;
   --border-radius-md: 12px;
   --border-radius-lg: 16px;
-
-
 
 }
 

@@ -7,8 +7,10 @@ import { BsMoon } from "react-icons/bs";
 import { toast } from "react-hot-toast";
 import { styled } from "styled-components";
 import ButtonIcon from "./ButtonIcon";
+import { useDarkMode } from "../context/DarkmodeProvider";
 
 function HeaderMenu({ logout }) {
+  const { isDarkMode, toggleDarkMode } = useDarkMode();
   const navigate = useNavigate();
 
   function handleLogout() {
@@ -26,7 +28,7 @@ function HeaderMenu({ logout }) {
         </ButtonIcon>
       </li>
       <li>
-        <ButtonIcon>
+        <ButtonIcon onClick={toggleDarkMode}>
           <BsMoon />
         </ButtonIcon>
       </li>

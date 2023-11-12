@@ -8,10 +8,10 @@ const variations = {
     grid-template-columns: 1fr 2fr 1fr 1fr;
   `,
   student: css`
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 2fr;
   `,
   teacher: css`
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 2fr;
   `,
 };
 

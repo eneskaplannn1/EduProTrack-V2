@@ -58,7 +58,12 @@ const StyledAuthContainer = styled.div`
   grid-template-columns: 6fr 5fr;
   max-height: 100vh;
 
-  color: var(--color-grey-0);
+  color: var(--color-grey-900);
+  background-color: var(--color-grey-50);
+
+  input {
+    color: black !important;
+  }
 `;
 
 const StyledLoginForm = styled.form`
@@ -91,7 +96,7 @@ const Copyright = styled.div`
   position: absolute;
   bottom: 5rem;
 
-  color: #161f33;
+  color: var(--color-grey-900);
   font-size: 20px;
 
   a {

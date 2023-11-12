@@ -19,7 +19,6 @@ import { useAuth } from "../../context/AuthProvider";
 function StudentDetail() {
   const { user } = useAuth();
   const { studentId } = useParams();
-
   const { data, isLoading } = useQuery({
     queryFn: () => getStudent(studentId),
     queryKey: ["student", studentId],

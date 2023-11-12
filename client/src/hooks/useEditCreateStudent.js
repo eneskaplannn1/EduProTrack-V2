@@ -40,9 +40,7 @@ function useEditCreateStudent({
   } = useForm({
     defaultValues: isEditing ? editValues : "",
   });
-
   function handleSubmitForm(data) {
-    console.log(data);
     const refactoredData = {
       ...data,
       teacher: teacherId ? teacherId : user._id,

@@ -26,7 +26,7 @@ function TeacherList() {
       <StyledListHead variation="teacher">
         <div>Teacher Avatar</div>
         <div>Teacher Name</div>
-        <Modal>
+        {/* <Modal>
           <Modal.Open>
             <Button size="large" variation="blue">
               Add New Teacher
@@ -35,7 +35,7 @@ function TeacherList() {
           <Modal.Window>
             <TeacherForm />
           </Modal.Window>
-        </Modal>
+        </Modal> */}
       </StyledListHead>
       <TeacherTable data={data} />
     </Fragment>

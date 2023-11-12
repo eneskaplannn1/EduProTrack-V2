@@ -24,117 +24,120 @@ import UserProfile from "./features/profile/UserProfile";
 import Class from "./pages/AppLayout/Class";
 import ClassDetail from "./features/class/ClassDetail";
 import GlobalStyles from "./styles/globalStyles";
+import { DarkModeProvider } from "./context/DarkmodeProvider";
 
 const client = new QueryClient();
 
 function App() {
   return (
-    <QueryClientProvider client={client}>
-      <GlobalStyles />
-      <ReactQueryDevtools initialIsOpen={false} />
-      <Toaster
-        position="top-center"
-        gutter={12}
-        containerStyle={{ margin: "12px" }}
-        toastOptions={{
-          success: {
-            duration: 3000,
-          },
-          error: {
-            duration: 3500,
-          },
-          loading: {
-            duration: 3000,
-          },
-          style: {
-            fontSize: "1rem",
-            maxWidth: "500px",
-            padding: "16px 24px",
-            color: "white",
-            backgroundColor: "grey",
-          },
-        }}
-      />
-      <AuthProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route
-              element={
-                <RequiredAuth allowedRoles={["Student", "Teacher", "Admin"]}>
-                  <AppLayout />
-                </RequiredAuth>
-              }
-            >
-              <Route index element={<Navigate replace to="profile" />} />
+    <DarkModeProvider>
+      <QueryClientProvider client={client}>
+        <GlobalStyles />
+        <ReactQueryDevtools initialIsOpen={false} />
+        <Toaster
+          position="top-center"
+          gutter={12}
+          containerStyle={{ margin: "12px" }}
+          toastOptions={{
+            success: {
+              duration: 3000,
+            },
+            error: {
+              duration: 3500,
+            },
+            loading: {
+              duration: 3000,
+            },
+            style: {
+              fontSize: "1rem",
+              maxWidth: "500px",
+              padding: "16px 24px",
+              color: "white",
+              backgroundColor: "grey",
+            },
+          }}
+        />
+        <AuthProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route
+                element={
+                  <RequiredAuth allowedRoles={["Student", "Teacher", "Admin"]}>
+                    <AppLayout />
+                  </RequiredAuth>
+                }
+              >
+                <Route index element={<Navigate replace to="profile" />} />
 
-              <Route path="profile" element={<UserProfile />} />
-              <Route path="homeworks" element={<Homework />} />
-              <Route
-                path="homeworks/:homeworkId"
-                element={<HomeworkDetail />}
-              />
-              <Route path="account" element={<Account />} />
+                <Route path="profile" element={<UserProfile />} />
+                <Route path="homeworks" element={<Homework />} />
+                <Route
+                  path="homeworks/:homeworkId"
+                  element={<HomeworkDetail />}
+                />
+                <Route path="account" element={<Account />} />
 
-              <Route
-                path="students"
-                element={
-                  <RequiredAuth allowedRoles={["Admin", "Teacher"]}>
-                    <Student />
-                  </RequiredAuth>
-                }
-              />
-              <Route
-                path="students/:studentId"
-                element={
-                  <RequiredAuth allowedRoles={["Admin", "Teacher"]}>
-                    <StudentDetail />
-                  </RequiredAuth>
-                }
-              />
+                <Route
+                  path="students"
+                  element={
+                    <RequiredAuth allowedRoles={["Admin", "Teacher"]}>
+                      <Student />
+                    </RequiredAuth>
+                  }
+                />
+                <Route
+                  path="students/:studentId"
+                  element={
+                    <RequiredAuth allowedRoles={["Admin", "Teacher"]}>
+                      <StudentDetail />
+                    </RequiredAuth>
+                  }
+                />
 
-              <Route
-                path="classes/:classId"
-                element={
-                  <RequiredAuth allowedRoles={["Admin", "Teacher"]}>
-                    <ClassDetail />
-                  </RequiredAuth>
-                }
-              />
+                <Route
+                  path="classes/:classId"
+                  element={
+                    <RequiredAuth allowedRoles={["Admin", "Teacher"]}>
+                      <ClassDetail />
+                    </RequiredAuth>
+                  }
+                />
 
-              {/* only admin */}
-              <Route
-                path="classes"
-                element={
-                  <RequiredAuth allowedRoles={["Admin"]}>
-                    <Class />
-                  </RequiredAuth>
-                }
-              />
-              <Route
-                path="teachers"
-                element={
-                  <RequiredAuth allowedRoles={["Admin"]}>
-                    <Teacher />
-                  </RequiredAuth>
-                }
-              />
-              <Route
-                path="teachers/:teacherId"
-                element={
-                  <RequiredAuth allowedRoles={["Admin"]}>
-                    <TeacherDetail />
-                  </RequiredAuth>
-                }
-              />
-            </Route>
+                {/* only admin */}
+                <Route
+                  path="classes"
+                  element={
+                    <RequiredAuth allowedRoles={["Admin"]}>
+                      <Class />
+                    </RequiredAuth>
+                  }
+                />
+                <Route
+                  path="teachers"
+                  element={
+                    <RequiredAuth allowedRoles={["Admin"]}>
+                      <Teacher />
+                    </RequiredAuth>
+                  }
+                />
+                <Route
+                  path="teachers/:teacherId"
+                  element={
+                    <RequiredAuth allowedRoles={["Admin"]}>
+                      <TeacherDetail />
+                    </RequiredAuth>
+                  }
+                />
+              </Route>
 
-            <Route path="login" element={<Login />} />
-            <Route path="unAuthorized" element={<UnAuthorized />} />
-            <Route path="*" element={<PageNotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </AuthProvider>
-    </QueryClientProvider>
+              <Route path="login" element={<Login />} />
+              <Route path="unAuthorized" element={<UnAuthorized />} />
+              <Route path="*" element={<PageNotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </AuthProvider>
+      </QueryClientProvider>
+    </DarkModeProvider>
   );
 }
 
