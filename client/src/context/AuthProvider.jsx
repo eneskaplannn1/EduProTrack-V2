@@ -18,21 +18,18 @@ function reducer(state, action) {
 function AuthProvider({ children }) {
   const [{ user }, dispatch] = useReducer(reducer, initialState);
 
-  const login = function (user, token) {
+  const login = function (user) {
+    console.log(user);
     dispatch({ type: "login", payload: user });
-    if (!token) return;
-    localStorage.setItem("accessToken", token);
   };
   const logout = function () {
     dispatch({ type: "logout" });
-    localStorage.removeItem("accessToken");
   };
   const updateUser = function (user) {
     dispatch({ type: "update-user", payload: user });
   };
 
-  const token = localStorage.getItem("accessToken");
-
+  /*
   useEffect(() => {
     if (!token) return;
     // if (user) return;
@@ -51,6 +48,7 @@ function AuthProvider({ children }) {
         logout();
       });
   }, [token]); // tokenin yanında user vardı , belirli bir problemi çözmek için koymuştum galiba neden koyduğumu unuttum sonrasında useri kaldırmam gerekti şifre değiştiğinde loginWithJWT fonksiyonunun çalışması için;
+  */
 
   return (
     <authContext.Provider value={{ user, login, logout, updateUser }}>

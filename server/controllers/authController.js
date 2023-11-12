@@ -28,6 +28,7 @@ const createSendToken = (user, statusCode, res) => {
   const cookieOptions = {
     expires: new Date(Date.now() + process.env.COOKIE_EXPIRES_IN * 1000),
     httpOnly: true,
+    sameSite: "Lax",
   };
   // if (process.env.NODE_ENV === "production") cookieOptions.secure = true;
   user.password = undefined;

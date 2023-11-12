@@ -10,7 +10,7 @@ const StyledConfirmDelete = styled.div`
   height: inherit;
 
   & p {
-    color: #6b7280;
+    color: var(--color-grey-500);
     margin-bottom: 1.2rem;
   }
 

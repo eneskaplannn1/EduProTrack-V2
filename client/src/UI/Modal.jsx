@@ -48,8 +48,8 @@ const StyledModal = styled.div`
 
   overflow: auto;
 
-  background-color: #18212f;
-  color: white;
+  background-color: var(--color-grey-0);
+  color: var(--color-grey-900);
   border-radius: 8px;
   transition: all 0.4s ease;
 

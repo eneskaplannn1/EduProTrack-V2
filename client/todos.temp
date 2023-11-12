@@ -21,32 +21,12 @@
 
 
 
-
-
-
-
 - New features
     1. kullanıcıların fotoğraf ekleme özelliği yok
 -*- 2. react-error-boundaries
     3. authenticationu localstorage dan cookie ye çevir
-    4. dark mode ekle
+-*- 4. dark mode ekle
     5. componentleri daha alt componentlere ayırmalıyım
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     
--*- server
-teacher student ve admin modelini tek bir modele düşür
-
 
