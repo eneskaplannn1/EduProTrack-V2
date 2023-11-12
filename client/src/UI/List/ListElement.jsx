@@ -22,6 +22,8 @@ const StyledListElement = styled.ul`
   border-top: 1px solid white;
   padding: 1rem 0;
 
+  font-size: 20px;
+
   a {
     color: #ca24e8;
     justify-self: end;

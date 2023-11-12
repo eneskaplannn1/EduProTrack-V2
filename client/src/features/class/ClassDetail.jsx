@@ -34,15 +34,17 @@ function ClassDetail() {
 
   if (isLoading)
     return <ClipLoader loading={isLoading} color="#fff" size={500} />;
+
   const { className, students, capacity, teacher, classID } = data.data.doc;
+
   return (
     <>
       <BackButton />
-      <StyledHeader>
+      {/* <StyledHeader>
         <li>Class Name : {className}</li>
         <li>Number of students: {students.length}</li>
         <li>Capacity : {capacity}</li>
-      </StyledHeader>
+      </StyledHeader> */}
 
       <>
         <h2>Teacher</h2>
@@ -51,7 +53,9 @@ function ClassDetail() {
           <li>Teacher Name</li>
           <Modal>
             <Modal.Open opens="choose-homework">
-              <Button>Give Homework</Button>
+              <Button variation="blue" size="medium">
+                Give Homework
+              </Button>
             </Modal.Open>
             <Modal.Window variation="medium" name="choose-homework">
               <ChoseHomework
@@ -77,7 +81,9 @@ function ClassDetail() {
 
           <Modal>
             <Modal.Open>
-              <Button>Add student to class</Button>
+              <Button size="medium" variation="blue">
+                Add student to class
+              </Button>
             </Modal.Open>
             <Modal.Window>
               <StudentForm teacherId={teacher._id} classId={classID} />

@@ -34,7 +34,7 @@ function UserProfile() {
       </DetailInfo>
       <ButtonContainer>
         <NavLink to="/account">
-          <Button type="small" variation="update">
+          <Button size="medium" variation="blue">
             Update Account
           </Button>
         </NavLink>

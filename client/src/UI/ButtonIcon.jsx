@@ -9,12 +9,23 @@ const ButtonIcon = styled.button`
 
   &:hover {
     background-color: var(--color-grey-100);
+
+    svg {
+      color: #51e15f;
+    }
   }
 
   & svg {
     width: 2.2rem;
     height: 2.2rem;
     color: var(--color-brand-600);
+  }
+
+  &:focus {
+    border: 1px solid #51e15f;
+    svg {
+      color: #51e15f;
+    }
   }
 `;
 

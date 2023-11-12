@@ -5,7 +5,7 @@ const GlobalStyles = createGlobalStyle`
 :root {
 
 --color-grey-0: #111827;
---color-grey-50: #161f33;
+--color-grey-50: #18212f;
 --color-grey-100: #1e293a;
 --color-grey-200: #374151;
 --color-grey-300: #4b5563;
@@ -19,8 +19,8 @@ const GlobalStyles = createGlobalStyle`
   --color-blue-100: #e0f2fe;
   --color-blue-700: #0369a1;
 
-  --color-green-100:#b6f3bc
-  --color-green-700:#51e15f
+  --color-green-100: #b6f3bc
+  --color-green-700: #51e15f
 
   --color-dgreen-100: #dcfce7;
   --color-dgreen-700: #15803d;
@@ -62,8 +62,6 @@ const GlobalStyles = createGlobalStyle`
 
 
 
-    // green 
-    // chose colors
 }
 
 
@@ -119,7 +117,6 @@ input:disabled {
 
 
 input:focus,
-button:focus,
 textarea:focus,
 select:focus {
   outline: 2px solid #ffa41a;

@@ -1,7 +1,6 @@
 import { styled } from "styled-components";
 
 function FormRowVertical({ children, label, error }) {
-  console.log(error);
   return (
     <StyledFormRow>
       {label && <Label htmlFor={label.toLowerCase()}>{label}</Label>}

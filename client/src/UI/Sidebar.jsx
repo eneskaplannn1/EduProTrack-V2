@@ -69,13 +69,11 @@ function Sidebar() {
   );
 }
 const StyledSidebar = styled.div`
-  grid-row: 2 / 3;
   background-color: var(--color-grey-50);
+  padding: 2rem 1rem;
+  grid-row: 2 / 3;
 
-  padding: 3rem 2rem;
   border-right: 1px solid var(--color-grey-100);
-
-  color: var(--color-grey-900);
 
   ul {
     display: flex;
@@ -94,7 +92,7 @@ const StyledNavLink = styled(NavLink)`
     color: var(--color-grey-600);
     font-size: 1.6rem;
     font-weight: 500;
-    padding: 1.2rem 2.4rem;
+    padding: 1rem 2rem;
     transition: all 0.3s;
   }
 
@@ -119,7 +117,7 @@ const StyledNavLink = styled(NavLink)`
   &:active svg,
   &.active:link svg,
   &.active:visited svg {
-    color: var(--color-brand-600);
+    color: #51e15f;
   }
 `;
 

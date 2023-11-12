@@ -5,6 +5,7 @@ import Button from "../../UI/Button/Button";
 
 import FormRowVertical from "../../UI/FormRowVertical";
 import Input from "../../UI/Input";
+import { NavLink } from "react-router-dom";
 
 function Login() {
   const { register, errors, handleSubmit, onSubmitForm, isLoading } =
@@ -39,6 +40,12 @@ function Login() {
         <Button disabled={isLoading} size="medium" variation="blue">
           {isLoading ? "Logging In..." : "Login"}
         </Button>
+        <Copyright>
+          © Copyright by Enes Kaplan.
+          <NavLink to={"https://github.com/eneskaplannn1/EduProTrack-V2"}>
+            Click here to see source code
+          </NavLink>
+        </Copyright>
       </StyledLoginForm>
     </StyledAuthContainer>
   );
@@ -77,5 +84,23 @@ const StyledLoginImageContainer = styled.div`
   img {
     height: 100vh;
     width: 100%;
+  }
+`;
+
+const Copyright = styled.div`
+  position: absolute;
+  bottom: 5rem;
+
+  color: #161f33;
+  font-size: 20px;
+
+  a {
+    transition: 0.4s ease;
+  }
+
+  &:hover {
+    a {
+      color: #ea580c;
+    }
   }
 `;

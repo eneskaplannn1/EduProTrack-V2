@@ -1,66 +1,50 @@
 import { styled } from "styled-components";
 
 import Button from "../../UI/Button/Button";
-import ButtonContainer from "../../UI/Button/ButtonContainer";
-import FormElement from "../../UI/FormRowVertical";
-import StyledFormLayout from "../../UI/form/FormLayout";
 
 import useUpdateUserData from "../../hooks/useUpdateUserData";
-
-const StyledDiv = styled.div`
-  margin: 1rem 0;
-
-  h4 {
-    margin-bottom: 1rem;
-  }
-`;
+import FormRow from "../../UI/FormRow";
+import Input from "../../UI/Input";
 
 function UpdateUserDataForm({ user, updateUser }) {
   const { handleSubmitForm, isUpdating, handleSubmit, errors, register } =
     useUpdateUserData({ user, updateUser });
 
   return (
-    <StyledDiv>
+    <Container>
       <h4>Update User Data</h4>
-      <StyledFormLayout onSubmit={handleSubmit(handleSubmitForm)}>
-        <FormElement>
-          <label htmlFor="email">Email Address</label>
-          <input
+      <StyledAccountContainer onSubmit={handleSubmit(handleSubmitForm)}>
+        <FormRow label="Email" error={errors?.email?.message}>
+          <Input
             disabled={isUpdating}
             type="email"
             id="email"
             placeholder="example@gmail.com"
             {...register("email", { required: "Enter your email" })}
           />
-          {errors?.email?.message && <div>{errors.email.message}</div>}
-        </FormElement>
-        <FormElement>
-          <label htmlFor="username">Username</label>
-          <input
+        </FormRow>
+        <FormRow label="Username" error={errors?.username?.message}>
+          <Input
             disabled={isUpdating}
             type="text"
             id="username"
             placeholder="John Doe"
             {...register("username", { required: "Enter your username" })}
           />
-          {errors?.username?.message && <div>{errors.username.message}</div>}
-        </FormElement>
-        <FormElement>
-          <label htmlFor="name">Name</label>
-          <input
+        </FormRow>
+        <FormRow label="Name" error={errors?.name?.message}>
+          <Input
             disabled={isUpdating}
             type="text"
             id="name"
             placeholder="John Doe"
             {...register("name", { required: "Enter your name" })}
           />
-          {errors?.name?.message && <div>{errors.name.message}</div>}
-        </FormElement>
+        </FormRow>
         {user.role !== "Admin" && (
           <>
-            <FormElement>
-              <label htmlFor="phoneNum">Phone number</label>
-              <input
+            <FormRow label="PhoneNum" error={errors?.phoneNum?.message}>
+              <Input
                 disabled={isUpdating}
                 type="text"
                 id="phoneNum"
@@ -69,21 +53,16 @@ function UpdateUserDataForm({ user, updateUser }) {
                   required: "Enter your phone number",
                 })}
               />
-              {errors?.phoneNum?.message && (
-                <div>{errors.phoneNum.message}</div>
-              )}
-            </FormElement>
-            <FormElement>
-              <label htmlFor="age">Age</label>
-              <input
+            </FormRow>
+            <FormRow label="Age" error={errors?.age?.message}>
+              <Input
                 disabled={isUpdating}
                 type="number"
                 id="age"
                 placeholder="John Doe"
                 {...register("age", { required: "Enter your age" })}
               />
-              {errors?.age?.message && <div>{errors.age.message}</div>}
-            </FormElement>
+            </FormRow>
           </>
         )}
         {/* <FormElement>
@@ -91,14 +70,32 @@ function UpdateUserDataForm({ user, updateUser }) {
           <input
           disabled={isUpdating} type="file" id="avatar" accept="image/*"  />
         </FormElement> */}
-        <ButtonContainer>
-          <Button size="small" variation="update" disabled={isUpdating}>
-            {isUpdating ? "Updating user" : "Update user"}
-          </Button>
-        </ButtonContainer>
-      </StyledFormLayout>
-    </StyledDiv>
+        <Button size="large" variation="blue" disabled={isUpdating}>
+          {isUpdating ? "Updating user" : "Update user"}
+        </Button>
+      </StyledAccountContainer>
+    </Container>
   );
 }
 
 export default UpdateUserDataForm;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  button {
+    margin-left: auto;
+  }
+`;
+
+const StyledAccountContainer = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
+  padding: 1.2rem 2.4rem;
+  background-color: var(--color-grey-50);
+  border-radius: var(--border-radius-md);
+`;

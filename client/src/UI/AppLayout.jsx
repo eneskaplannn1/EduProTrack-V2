@@ -20,7 +20,8 @@ export default AppLayout;
 const StyledContainer = styled.div`
   height: 100vh;
   display: grid;
-  grid-template-columns: 2fr 7fr;
+  grid-template-columns: 2fr 8fr;
+  grid-template-rows: auto 1fr;
   color: var(--color-grey-900);
 `;
 

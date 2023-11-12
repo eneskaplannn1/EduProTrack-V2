@@ -6,6 +6,8 @@ import FormElement from "../../UI/FormRowVertical";
 import StyledFormLayout from "../../UI/form/FormLayout";
 
 import useUpdateUserPassword from "../../hooks/useUpdateUserPassword";
+import FormRow from "../../UI/FormRow";
+import Input from "../../UI/Input";
 
 const StyledDiv = styled.div`
   margin: 1rem 0;
@@ -28,22 +30,19 @@ function UpdatePasswordForm() {
     <StyledDiv>
       <h4>Update Password</h4>
       <StyledFormLayout onSubmit={handleSubmit(handleSubmitForm)}>
-        <FormElement>
-          <label htmlFor="password">Old Password </label>
-          <input
+        <FormRow label="Password" error={errors?.password?.message}>
+          <Input
             type="password"
             id="password"
-            {...register("password", { required: "Enter your email" })}
+            {...register("password", { required: "Enter your password" })}
           />
-          {errors?.password?.message && <div>{errors.password.message}</div>}
-        </FormElement>
-        <FormElement>
-          <label htmlFor="newPassword">New password </label>
-          <input
+        </FormRow>
+        <FormRow label="newPassword" error={errors?.newPassword?.message}>
+          <Input
             type="password"
             id="newPassword"
             {...register("newPassword", {
-              required: "Enter your email",
+              required: "Enter your new password",
               minLength: {
                 value: 8,
                 message: "Password must be at least 8 characters",
@@ -52,27 +51,20 @@ function UpdatePasswordForm() {
                 value === getValues().confirmPass || "Passwords do not match",
             })}
           />
-          {errors?.newPassword?.message && (
-            <div>{errors.newPassword.message}</div>
-          )}
-        </FormElement>
-        <FormElement>
-          <label htmlFor="confirmPass">Confirm password</label>
-          <input
+        </FormRow>
+        <FormRow label="confirmPass" error={errors?.confirmPass?.message}>
+          <Input
             type="password"
             id="confirmPass"
             {...register("confirmPass", {
-              required: "Enter your email",
+              required: "Confirm your password",
               validate: (value) =>
                 value === getValues().newPassword || "Passwords do not match",
             })}
           />
-          {errors?.confirmPass?.message && (
-            <div>{errors.confirmPass.message}</div>
-          )}
-        </FormElement>
+        </FormRow>
         <ButtonContainer>
-          <Button size="small" variation="update">
+          <Button size="large" variation="blue">
             {isUpdating ? "Updating password" : "Update Password"}
           </Button>
         </ButtonContainer>
