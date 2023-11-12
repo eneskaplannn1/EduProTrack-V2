@@ -32,11 +32,9 @@ function ClassDetail() {
 
   const { data, isLoading } = useClass({ classId });
 
-  if (isLoading)
-    return <ClipLoader loading={isLoading} color="#fff" size={500} />;
+  if (isLoading) return "hello";
 
   const { className, students, capacity, teacher, classID } = data.data.doc;
-
   return (
     <>
       <BackButton />

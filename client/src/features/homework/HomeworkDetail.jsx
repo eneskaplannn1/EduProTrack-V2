@@ -20,13 +20,12 @@ import { useAuth } from "../../context/AuthProvider";
 function HomeworkDetail() {
   const queryClient = useQueryClient();
   const { user } = useAuth();
-  const { homeworkId } = useParams();
 
+  const { homeworkId } = useParams();
   const { data, isLoading } = useQuery({
     queryFn: () => getHomework(homeworkId),
     queryKey: ["homework", homeworkId],
   });
-
   const { mutate, isLoading: isSending } = useMutation({
     mutationFn: updateHomeworkStatus,
     mutationKey: ["homework", homeworkId],
@@ -86,7 +85,7 @@ function HomeworkDetail() {
           <>
             <Modal>
               <Modal.Open opens="update-homework">
-                <Button variation="update" size="small">
+                <Button variation="blue" size="medium">
                   Update Homework
                 </Button>
               </Modal.Open>
@@ -100,7 +99,7 @@ function HomeworkDetail() {
             </Modal>
             <Modal>
               <Modal.Open opens="delete-homework">
-                <Button variation="delete" size="small">
+                <Button variation="red" size="medium">
                   Delete Homework
                 </Button>
               </Modal.Open>
@@ -117,7 +116,9 @@ function HomeworkDetail() {
             {status === "Evaluating" && (
               <Modal>
                 <Modal.Open opens="evaluate-homework">
-                  <Button>Evaluate Homework</Button>
+                  <Button variation="green" size="medium">
+                    Evaluate Homework
+                  </Button>
                 </Modal.Open>
                 <Modal.Window variation="small" name="evaluate-homework">
                   <EvaluateHomework

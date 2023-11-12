@@ -28,7 +28,7 @@ function TeacherList() {
         <div>Teacher Name</div>
         <Modal>
           <Modal.Open>
-            <Button size="small" variation="add">
+            <Button size="large" variation="blue">
               Add New Teacher
             </Button>
           </Modal.Open>

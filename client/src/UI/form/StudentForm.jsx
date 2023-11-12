@@ -1,10 +1,11 @@
-import FormElement from "../FormRowVertical";
 import Button from "../Button/Button";
 import ButtonContainer from "../Button/ButtonContainer";
 import StyledFormLayout from "./FormLayout";
 
 import { useAuth } from "../../context/AuthProvider";
 import useEditCreateStudent from "../../hooks/useEditCreateStudent";
+import Input from "../Input";
+import FormRow from "../FormRow";
 
 function StudentForm({
   onCloseModal,
@@ -29,70 +30,57 @@ function StudentForm({
 
   return (
     <StyledFormLayout onSubmit={handleSubmit(handleSubmitForm)}>
-      <FormElement>
-        <label htmlFor="name">Name</label>
-        <input
+      <FormRow label="Name" error={errors?.name?.message}>
+        <Input
           disabled={isManipulating}
           type="text"
           id="name"
           {...register("name", { required: "Enter your name" })}
         />
-        {errors?.name?.message && <div>{errors.name.message}</div>}
-      </FormElement>
-      <FormElement>
-        <label htmlFor="email">Email</label>
-        <input
+      </FormRow>
+      <FormRow label="Email" error={errors?.email?.message}>
+        <Input
           disabled={isManipulating}
           type="email"
           id="email"
           {...register("email", { required: "Enter your email" })}
         />
-        {errors?.email?.message && <div>{errors.email.message}</div>}
-      </FormElement>
-      <FormElement>
-        <label htmlFor="username">Username</label>
-        <input
+      </FormRow>
+      <FormRow label="Username" error={errors?.username?.message}>
+        <Input
           disabled={isManipulating}
           type="text"
           id="username"
           {...register("username", { required: "Enter your username" })}
         />
-        {errors?.username?.message && <div>{errors.username.message}</div>}
-      </FormElement>
+      </FormRow>
       {!isEditing && (
-        <FormElement>
-          <label htmlFor="password">Password</label>
-          <input
+        <FormRow label="Password" error={errors?.password?.message}>
+          <Input
             disabled={isManipulating}
             type="password"
             id="password"
             {...register("password", { required: "Enter your password" })}
           />
-          {errors?.password?.message && <div>{errors.password.message}</div>}
-        </FormElement>
+        </FormRow>
       )}
-      <FormElement>
-        <label htmlFor="age">Age</label>
-        <input
+      <FormRow label="Age" error={errors?.age?.message}>
+        <Input
           disabled={isManipulating}
           type="number"
           id="age"
           {...register("age", { required: "Enter your age" })}
         />
-        {errors?.age?.message && <div>{errors.age.message}</div>}
-      </FormElement>
-      <FormElement>
-        <label htmlFor="phoneNum">Phone Number</label>
-        <input
+      </FormRow>
+      <FormRow label="phoneNum" error={errors?.phoneNum?.message}>
+        <Input
           disabled={isManipulating}
           type="tel"
           id="phoneNum"
           {...register("phoneNum", { required: "Enter your phone number" })}
         />
-        {errors?.phoneNum?.message && <div>{errors.phoneNum.message}</div>}
-      </FormElement>
-      <FormElement>
-        <label htmlFor="gender">Gender</label>
+      </FormRow>
+      <FormRow label="Gender" error={errors?.gender?.message}>
         <select
           id="gender"
           name="students"
@@ -101,17 +89,17 @@ function StudentForm({
           <option value="male">Male</option>
           <option value="female">Female</option>
         </select>
-      </FormElement>
+      </FormRow>
       <ButtonContainer>
         <Button
           onClick={onCloseModal}
           disabled={isManipulating}
-          variation="cancel"
-          type="small"
+          variation="red"
+          size="large"
         >
           Cancel
         </Button>
-        <Button disabled={isManipulating} variation="update" type="small">
+        <Button disabled={isManipulating} variation="blue" size="large">
           {isEditing && isManipulating
             ? "Updating Student"
             : isEditing

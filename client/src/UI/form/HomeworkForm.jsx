@@ -1,8 +1,9 @@
 import StyledFormLayout from "./FormLayout";
-import FormElement from "../FormRowVertical";
 import ButtonContainer from "../Button/ButtonContainer";
 import Button from "../Button/Button";
 import useEditCreateHomework from "../../hooks/useEditCreateHomework";
+import Input from "../Input";
+import FormRow from "../FormRow";
 
 function HomeworkForm({
   onCloseModal,
@@ -29,29 +30,24 @@ function HomeworkForm({
 
   return (
     <StyledFormLayout onSubmit={handleSubmit(handleSubmitForm)}>
-      <FormElement>
-        <label htmlFor="subject">Subject</label>
-        <input
+      <FormRow label="Subject" error={errors?.subject?.message}>
+        <Input
           disabled={isManupulating}
           type="text"
           id="subject"
           {...register("subject", { required: "Homework must have subject" })}
         />
-        {errors?.subject?.message && <div>{errors.subject.message}</div>}
-      </FormElement>
-      <FormElement>
-        <label htmlFor="topic">Topic</label>
-        <input
+      </FormRow>
+      <FormRow label="Topic" error={errors?.topic?.message}>
+        <Input
           disabled={isManupulating}
           type="text"
           id="topic"
           {...register("topic", { required: "Homework must have topic" })}
         />
-        {errors?.topic?.message && <div>{errors.topic.message}</div>}
-      </FormElement>
-      <FormElement>
-        <label htmlFor="description">Description</label>
-        <input
+      </FormRow>
+      <FormRow label="Description" error={errors?.description?.message}>
+        <Input
           disabled={isManupulating}
           type="text"
           id="description"
@@ -59,13 +55,9 @@ function HomeworkForm({
             required: "Homework must have description",
           })}
         />
-        {errors?.description?.message && (
-          <div>{errors.description.message}</div>
-        )}
-      </FormElement>
-      <FormElement>
-        <label htmlFor="startDate">Start Date</label>
-        <input
+      </FormRow>
+      <FormRow label="StartDate" error={errors?.startDate?.message}>
+        <Input
           disabled={isManupulating}
           type="date"
           id="startDate"
@@ -73,11 +65,9 @@ function HomeworkForm({
             required: "Homework must have starting date",
           })}
         />
-        {errors?.startDate?.message && <div>{errors.startDate.message}</div>}
-      </FormElement>
-      <FormElement>
-        <label htmlFor="expirationDate">Expiration Date</label>
-        <input
+      </FormRow>
+      <FormRow label="ExpirationDate" error={errors?.expirationDate?.message}>
+        <Input
           disabled={isManupulating}
           type="date"
           id="expirationDate"
@@ -85,13 +75,9 @@ function HomeworkForm({
             required: "Homework must expiration date",
           })}
         />
-        {errors?.expirationDate?.message && (
-          <div>{errors.expirationDate.message}</div>
-        )}
-      </FormElement>
+      </FormRow>
       {chooseStudent && (
-        <FormElement>
-          <label htmlFor="gender">Students</label>
+        <FormRow label="Students" error={errors?.students?.message}>
           <select
             multiple={true}
             id="students"
@@ -105,13 +91,13 @@ function HomeworkForm({
               );
             })}
           </select>
-        </FormElement>
+        </FormRow>
       )}
       <ButtonContainer>
-        <Button onClick={onCloseModal} variation="cancel" type="small">
+        <Button onClick={onCloseModal} variation="red" size="medium">
           Cancel
         </Button>
-        <Button disabled={isManupulating} variation="update" type="small">
+        <Button disabled={isManupulating} variation="blue" size="medium">
           {isEditing && isManupulating
             ? "Updating homework"
             : isEditing

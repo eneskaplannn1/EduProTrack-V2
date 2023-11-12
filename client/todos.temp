@@ -3,9 +3,9 @@
 
 - ana still hatlarını belirle önce
 -*- 1. güzel bir logo tasarlayabilirim
-    2. stilleri düzelt + stillleri responsive yap
+-*- 2. stilleri düzelt + stillleri responsive yap
 -*- 3. login sayfasının stillerini güzelleştir (resimlerle daha canlı güzel bir hale getir) 
-    4. dark mode ekle
+    
 
    
 
@@ -15,14 +15,17 @@
     3. adminden öğretmen ekleme özelliğini kaldır çünkü class lazım öğretmene
     4. admine ödevi mutate etme ve silme özelliğini kaldır ????
     5. admine class sayfasında ödev verme özelliğini kaldır , öğrenci ekleme özelliği çalışabilecek haldeyse elleme
+    6. öğretmen class kısmına basınca kendi detailini gör butonunu görmemeli yoksa unAuth a atılıyor
+    7. öğretmen ödev verme tuşuna basınca 2 kere tıklama yapması gerekiyor onu düzelt tıklama sayısı teke düşsün
 
-- User experince için
-    1. öğretmen ödev verme tuşuna basınca 2 kere tıklama yapması gerekiyor onu düzelt tıklama sayısı teke düşsün
+
+
 
 - New features
     1. kullanıcıların fotoğraf ekleme özelliği yok
-    2. react-error-boundaries
+-*- 2. react-error-boundaries
     3. authenticationu localstorage dan cookie ye çevir
+    4. dark mode ekle
 
 
 

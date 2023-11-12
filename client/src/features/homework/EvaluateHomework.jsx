@@ -2,13 +2,6 @@ import { styled } from "styled-components";
 import Button from "../../UI/Button/Button";
 import ButtonContainer from "../../UI/Button/ButtonContainer";
 
-const StyledEvaluateHomework = styled.div`
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
 function EvaluateHomework({ handleHomeworkStatus, onCloseModal, isSending }) {
   return (
     <StyledEvaluateHomework>
@@ -18,7 +11,8 @@ function EvaluateHomework({ handleHomeworkStatus, onCloseModal, isSending }) {
             handleHomeworkStatus("Successful");
             onCloseModal();
           }}
-          variation="positive"
+          size="large"
+          variation="green"
         >
           {isSending ? "Setting Homework Status" : "Success"}
         </Button>
@@ -27,7 +21,8 @@ function EvaluateHomework({ handleHomeworkStatus, onCloseModal, isSending }) {
             handleHomeworkStatus("Failed");
             onCloseModal();
           }}
-          variation="negative"
+          size="large"
+          variation="red"
         >
           {isSending ? "Setting Homework Status" : "Fail"}
         </Button>
@@ -37,3 +32,10 @@ function EvaluateHomework({ handleHomeworkStatus, onCloseModal, isSending }) {
 }
 
 export default EvaluateHomework;
+
+const StyledEvaluateHomework = styled.div`
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;

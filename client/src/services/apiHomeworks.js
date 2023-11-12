@@ -16,6 +16,7 @@ export const getHomework = async function (id) {
     throw new Error(err);
   }
 };
+
 export const getStudentHomeworks = async function (id) {
   try {
     return await customRequst.get(`/students/${id}/homeworks`);

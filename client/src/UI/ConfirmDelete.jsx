@@ -30,10 +30,20 @@ function ConfirmDelete({ resourceName, onConfirm, disabled, onCloseModal }) {
         action cannot be undone.
       </p>
       <div>
-        <Button variation="cancel" disabled={disabled} onClick={onCloseModal}>
+        <Button
+          variation="red"
+          size="large"
+          disabled={disabled}
+          onClick={onCloseModal}
+        >
           Cancel
         </Button>
-        <Button variation="delete" disabled={disabled} onClick={onConfirm}>
+        <Button
+          variation="green"
+          size="large"
+          disabled={disabled}
+          onClick={onConfirm}
+        >
           Delete
         </Button>
       </div>

@@ -34,6 +34,16 @@ const StyledFormRow = styled.div`
   &:not(:last-child) {
     border-bottom: 1px solid var(--color-grey-100);
   }
+
+  select {
+    color: var(--color-grey-900);
+    background-color: var(--color-grey-0);
+
+    border: 1px solid var(--color-grey-600);
+    border-radius: var(--border-radius-sm);
+
+    padding: 0.6rem 1rem;
+  }
 `;
 
 const Label = styled.label`

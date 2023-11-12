@@ -1,8 +1,9 @@
 import StyledFormLayout from "./FormLayout";
-import FormElement from "../FormRowVertical";
+import FormRow from "../FormRow";
 import ButtonContainer from "../Button/ButtonContainer";
 import Button from "../Button/Button";
 import useEditCreateTeacher from "../../hooks/useEditCreateTeacher";
+import Input from "../Input";
 
 function TeacherForm({ onCloseModal, isEditing, TeacherToEdit = {} }) {
   const { _id: teacherId, ...editValues } = TeacherToEdit;
@@ -12,93 +13,80 @@ function TeacherForm({ onCloseModal, isEditing, TeacherToEdit = {} }) {
 
   return (
     <StyledFormLayout onSubmit={handleSubmit(handleSubmitForm)}>
-      <FormElement>
-        <label htmlFor="name">Name</label>
-        <input
+      <FormRow label="Name" error={errors?.name?.message}>
+        <Input
           disabled={isManupulating}
           type="text"
           id="name"
           {...register("name", { required: "Enter your name" })}
         />
-        {errors?.name?.message && <div>{errors.name.message}</div>}
-      </FormElement>
-      <FormElement>
-        <label htmlFor="username">Username</label>
-        <input
+      </FormRow>
+      <FormRow label="Username" error={errors?.username?.message}>
+        <Input
           disabled={isManupulating}
           type="text"
           id="username"
-          {...register("username", { required: "Enter your name" })}
+          {...register("username", { required: "Enter teacher's name" })}
         />
-        {errors?.username?.message && <div>{errors.username.message}</div>}
-      </FormElement>
-      <FormElement>
-        <label htmlFor="email">Email</label>
-        <input
+      </FormRow>
+      <FormRow label="Email" error={errors?.email?.message}>
+        <Input
           disabled={isManupulating}
           type="email"
           id="email"
-          {...register("email", { required: "Enter your email" })}
+          {...register("email", { required: "Enter teacher's email" })}
         />
-        {errors?.email?.message && <div>{errors.email.message}</div>}
-      </FormElement>
+      </FormRow>
       {!isEditing && (
-        <FormElement>
-          <label htmlFor="password">Password</label>
-          <input
+        <FormRow label="Password" error={errors?.password?.message}>
+          <Input
             disabled={isManupulating}
             type="password"
             id="password"
-            {...register("password", { required: "Enter your password" })}
+            {...register("password", { required: "Enter teacher's password" })}
           />
-          {errors?.password?.message && <div>{errors.password.message}</div>}
-        </FormElement>
+        </FormRow>
       )}
-      <FormElement>
-        <label htmlFor="address">Address</label>
-        <input
+      <FormRow label="Address" error={errors?.address?.message}>
+        <Input
           disabled={isManupulating}
           type="address"
           id="address"
-          {...register("address", { required: "Enter your address" })}
+          {...register("address", { required: "Enter teacher's address" })}
         />
-        {errors?.address?.message && <div>{errors.address.message}</div>}
-      </FormElement>
-      <FormElement>
-        <label htmlFor="phoneNum">Phone Number</label>
-        <input
+      </FormRow>
+      <FormRow label="phoneNum" error={errors?.phoneNum?.message}>
+        <Input
           disabled={isManupulating}
           type="text"
           id="phoneNum"
-          {...register("phoneNum", { required: "Enter your phone number" })}
+          {...register("phoneNum", {
+            required: "Enter teacher's phone number",
+          })}
         />
-        {errors?.phoneNum?.message && <div>{errors.phoneNum.message}</div>}
-      </FormElement>
-      <FormElement>
-        <label htmlFor="age">Age</label>
-        <input
+      </FormRow>
+      <FormRow label="Age" error={errors?.age?.message}>
+        <Input
           disabled={isManupulating}
           type="number"
           id="age"
-          {...register("age", { required: "Enter your age" })}
+          {...register("age", { required: "Enter teacher's age" })}
         />
-        {errors?.age?.message && <div>{errors.age.message}</div>}
-      </FormElement>
-      <FormElement>
-        <label htmlFor="gender">Gender</label>
+      </FormRow>
+      <FormRow label="Gender" error={errors?.gender?.message}>
         <select
           id="gender"
-          {...register("gender", { required: "Select your gender" })}
+          {...register("gender", { required: "Select teacher's gender" })}
         >
           <option value="male">Male</option>
           <option value="female">Female</option>
         </select>
-      </FormElement>
+      </FormRow>
       <ButtonContainer>
-        <Button variation="cancel" type="small" onClick={onCloseModal}>
+        <Button variation="red" size="medium" onClick={onCloseModal}>
           Cancel
         </Button>
-        <Button disabled={isManupulating} variation="update" type="small">
+        <Button disabled={isManupulating} variation="blue" size="medium">
           {isEditing ? "Update Teacher data" : "Add Teacher"}
         </Button>
       </ButtonContainer>

@@ -20,7 +20,7 @@ function useLogin() {
     handleSubmit,
   } = useForm({
     defaultValues: {
-      email: "emily_johnson@gmail.com",
+      email: "exampleAdmin@gmail.com",
       password: "pass1234",
     },
   });

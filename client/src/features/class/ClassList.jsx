@@ -51,7 +51,9 @@ function ClassList() {
           <div>Capacity: {classroom.capacity}</div>
           <div>Total Students: {classroom.students.length}</div>
           <NavLink to={`/classes/${classroom._id}`}>
-            <Button>See Detail</Button>
+            <Button variation="blue" size="large">
+              See Detail
+            </Button>
           </NavLink>
         </StyledClass>
       ))}

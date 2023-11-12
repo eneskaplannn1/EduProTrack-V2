@@ -67,7 +67,7 @@ function StudentDetail() {
         <ButtonContainer>
           <Modal>
             <Modal.Open opens="update-student">
-              <Button size="small" variation="update">
+              <Button size="large" variation="blue">
                 Update Student
               </Button>
             </Modal.Open>
@@ -77,7 +77,7 @@ function StudentDetail() {
           </Modal>
           <Modal>
             <Modal.Open opens="delete-student">
-              <Button type="small" variation="delete">
+              <Button size="large" variation="red">
                 Delete Student
               </Button>
             </Modal.Open>

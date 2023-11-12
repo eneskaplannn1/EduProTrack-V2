@@ -71,7 +71,7 @@ function UpdateUserDataForm({ user, updateUser }) {
           disabled={isUpdating} type="file" id="avatar" accept="image/*"  />
         </FormElement> */}
         <Button size="large" variation="blue" disabled={isUpdating}>
-          {isUpdating ? "Updating user" : "Update user"}
+          {isUpdating ? "Updating account" : "Update account"}
         </Button>
       </StyledAccountContainer>
     </Container>

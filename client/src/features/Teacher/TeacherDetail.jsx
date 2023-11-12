@@ -65,7 +65,7 @@ function TeacherDetail() {
         <ButtonContainer>
           <Modal>
             <Modal.Open opens="update-teacher">
-              <Button type="small" variation="update">
+              <Button size="large" variation="blue">
                 Update Teacher
               </Button>
             </Modal.Open>
@@ -75,7 +75,7 @@ function TeacherDetail() {
           </Modal>
           <Modal>
             <Modal.Open opens="update-teacher">
-              <Button type="small" variation="delete">
+              <Button size="large" variation="red">
                 Delete Teacher
               </Button>
             </Modal.Open>

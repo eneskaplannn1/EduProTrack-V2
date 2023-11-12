@@ -1,4 +1,4 @@
-  import { Fragment } from "react";
+import { Fragment } from "react";
 import { NavLink } from "react-router-dom";
 
 import Button from "../../UI/Button/Button";
@@ -26,7 +26,9 @@ function StudentList({ user }) {
         <li>Student Avatar</li>
         <li>Student Name</li>
         <NavLink to={`/classes/${user.class}`}>
-          <Button>Add Student</Button>
+          <Button variation="blue" size="large">
+            Add Student
+          </Button>
         </NavLink>
       </StyledListHead>
       <StudentsTable students={data?.data?.doc} />
