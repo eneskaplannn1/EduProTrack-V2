@@ -37,7 +37,7 @@ function TeacherDetail() {
     gender,
     adminssionDate,
     address,
-    phoneNum,
+    phone,
     role,
     _id,
     photo,
@@ -53,7 +53,7 @@ function TeacherDetail() {
       <DetailInfo>
         <li>Full Name: {name}</li>
         <li>Email: {email}</li>
-        <li>Phone: {phoneNum}</li>
+        <li>Phone: {phone}</li>
         <li>Address: {address}</li>
         <li>Gender: {gender}</li>
         <li>Age: {age}</li>
@@ -86,6 +86,7 @@ function TeacherDetail() {
                 onConfirm={() => {
                   DeleteTeacher({ _id });
                 }}
+                isDeleting={isDeleting}
               />
             </Modal.Window>
           </Modal>

@@ -3,7 +3,9 @@ import { styled } from "styled-components";
 function FormRow({ children, label, error }) {
   return (
     <StyledFormRow>
-      {label && <Label htmlFor={label.toLowerCase()}>{label}</Label>}
+      {label && (
+        <Label htmlFor={label.slice(",")[0].toLowerCase()}>{label}</Label>
+      )}
       {children}
       {error && <Error>{error}</Error>}
     </StyledFormRow>

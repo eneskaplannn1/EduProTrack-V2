@@ -11,8 +11,8 @@ function useDeleteTeacher() {
     mutationFn: deleteTeacher,
     mutationKey: ["deleteTeacher"],
     onSuccess: async () => {
+      await QueryClient.invalidateQueries({ queryKey: ["teachers"] });
       toast.success("Teacher deleted successfully");
-      await QueryClient.invalidateQueries({ queryKey: ["teacher"] });
       navigate("/teachers");
     },
   });

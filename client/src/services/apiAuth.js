@@ -11,16 +11,28 @@ import customRequst from "../utils/customRequest";
 // );
 
 export const HandleLogin = async function (data) {
+  console.log(data);
   try {
     return await customRequst.post("/auth/login", data);
   } catch (err) {
+    console.log(err);
     throw new Error(err.response.data.message);
   }
 };
 
+export const HandleLogout = async function () {
+  try {
+    return await customRequst.get("/auth/logout");
+  } catch (err) {
+    throw new Error(err.response.data.message);
+  }
+};
 export const LoginWithJWT = async function () {
   try {
-    const res = await customRequst.get("/auth/logUserIn");
+    const res = await customRequst.get("/auth/logUserIn", {
+      withCredentials: true,
+    });
+    console.log(res);
     return res.data;
   } catch (err) {
     throw new Error(err.response.data.message);

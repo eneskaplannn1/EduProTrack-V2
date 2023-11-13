@@ -29,8 +29,8 @@ function HomeworkDetail() {
   const { mutate, isLoading: isSending } = useMutation({
     mutationFn: updateHomeworkStatus,
     mutationKey: ["homework", homeworkId],
-    onSuccess: () => {
-      queryClient.invalidateQueries(["homeworks", ["homework", homeworkId]]);
+    onSuccess: async () => {
+      await queryClient.invalidateQueries(["homework", homeworkId]);
     },
   });
 
@@ -113,7 +113,7 @@ function HomeworkDetail() {
                 />
               </Modal.Window>
             </Modal>
-            {status === "Evaluating" && (
+            {status === "Evaluating" && user.role === "Teacher" && (
               <Modal>
                 <Modal.Open opens="evaluate-homework">
                   <Button variation="green" size="medium">
@@ -131,7 +131,11 @@ function HomeworkDetail() {
           </>
         ) : (
           status === "Pending" && (
-            <Button onClick={() => handleHomeworkStatus("Evaluating")}>
+            <Button
+              variation="blue"
+              size="large"
+              onClick={() => handleHomeworkStatus("Evaluating")}
+            >
               {isSending ? "Sending Homework" : "Send Homework"}
             </Button>
           )

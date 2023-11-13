@@ -35,7 +35,7 @@ function StudentDetail() {
     age,
     gender,
     adminssionDate,
-    phoneNum,
+    phone,
     role,
     _id,
     teacher,
@@ -54,7 +54,7 @@ function StudentDetail() {
         <li>FullName : {name}</li>
         <li>Email :{email}</li>
         <li>Age : {age}</li>
-        <li>Phone : {phoneNum}</li>
+        <li>Phone : {phone}</li>
         <li>Gender : {gender}</li>
         <li>Address : Some dummy address</li>
         <li>Teacher: {teacher?.name}</li>

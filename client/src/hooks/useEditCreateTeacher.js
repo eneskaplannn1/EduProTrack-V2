@@ -32,7 +32,7 @@ function useEditCreateTeacher({
       reset();
       onCloseModal();
     },
-    onError: (err) => toast.error(err),
+    onError: (err) => toast.error(err.message),
   });
 
   function handleSubmitForm(data) {

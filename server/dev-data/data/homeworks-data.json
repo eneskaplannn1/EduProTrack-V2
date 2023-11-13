@@ -1,152 +1,281 @@
 [
   {
+    "_id": "65521d8b62c934f43fd98b71",
+    "subject": "Science",
+    "topic": "Motionnnn",
+    "description": "12312312",
+    "startDate": "2023-11-13T00:00:00.000Z",
+    "expirationDate": "2023-12-01T00:00:00.000Z",
+    "status": "Evaluating",
+    "students": [
+      "64f6e729c82152a9f3a4194f",
+      "64f6e729c82152a9f3a4194d",
+      "64f6e729c82152a9f3a4194e",
+      "64f6e729c82152a9f3a41950",
+      "64f6e729c82152a9f3a41951",
+      "65521ce9033464871948cda9",
+      "65521d107042c12b50233add"
+    ],
+    "teacher": "64f6e1bb4edb2a67544f0bac",
+    "class": "64f6e1394edb2a67544f0baa",
+    "createdAt": "2023-11-13T12:58:18.084Z"
+  },
+  {
+    "_id": "65521ea362c934f43fd98bdc",
+    "subject": "Physic",
+    "topic": "Electric Flux",
+    "description": "electric flux, property of an electric field that may be thought of as the number of electric lines of force (or electric field lines) that intersect a given area",
+    "startDate": "2023-11-13T00:00:00.000Z",
+    "expirationDate": "2023-11-29T00:00:00.000Z",
+    "status": "Evaluating",
+    "students": [
+      "64f6e729c82152a9f3a4194f",
+      "64f6e729c82152a9f3a4194d",
+      "64f6e729c82152a9f3a4194e",
+      "64f6e729c82152a9f3a41950",
+      "64f6e729c82152a9f3a41951",
+      "65521ce9033464871948cda9",
+      "65521d107042c12b50233add"
+    ],
+    "teacher": "64f6e1bb4edb2a67544f0bac",
+    "class": "64f6e1394edb2a67544f0baa",
+    "createdAt": "2023-11-13T12:58:18.084Z"
+  },
+  {
+    "_id": "65521edc62c934f43fd98bfb",
+    "subject": "Math",
+    "topic": "Series",
+    "description": " In this chapter we introduce sequences and series. We discuss whether a sequence converges or diverges, is increasing or decreasing.",
+    "startDate": "2023-11-28T00:00:00.000Z",
+    "expirationDate": "2023-12-07T00:00:00.000Z",
+    "status": "Evaluating",
+    "students": [
+      "64f6e729c82152a9f3a4194f",
+      "64f6e729c82152a9f3a4194d",
+      "64f6e729c82152a9f3a4194e",
+      "64f6e729c82152a9f3a41950",
+      "64f6e729c82152a9f3a41951",
+      "65521ce9033464871948cda9",
+      "65521d107042c12b50233add"
+    ],
+    "teacher": "64f6e1bb4edb2a67544f0bac",
+    "class": "64f6e1394edb2a67544f0baa",
+    "createdAt": "2023-11-13T12:58:18.084Z"
+  },
+  {
+    "_id": "65521f1962c934f43fd98c38",
+    "subject": "Computer Science",
+    "topic": "Programming Languages",
+    "description": "How javascript makes our life better , explain it .",
+    "startDate": "2023-10-31T00:00:00.000Z",
+    "expirationDate": "2023-12-03T00:00:00.000Z",
+    "status": "Pending",
+    "students": [
+      "64f6e729c82152a9f3a4194f",
+      "64f6e729c82152a9f3a4194d",
+      "64f6e729c82152a9f3a4194e",
+      "64f6e729c82152a9f3a41950",
+      "64f6e729c82152a9f3a41951",
+      "65521ce9033464871948cda9",
+      "65521d107042c12b50233add"
+    ],
+    "teacher": "64f6e1bb4edb2a67544f0bac",
+    "class": "64f6e1394edb2a67544f0baa",
+    "createdAt": "2023-11-13T12:58:18.084Z"
+  },
+  {
     "_id": "64a8850c8a97a7750bb96a54",
     "subject": "Science",
     "topic": "Laws of Motion Experiment",
     "description": "Perform an experiment to demonstrate the laws of motion. Convey the principles of motion through a hands-on activity.",
-    "status": "Pending",
+    "startDate": "2023-11-14T12:48:32.775Z",
+    "expirationDate": "2023-11-20T12:48:32.775Z",
+    "status": "Successful",
     "students": ["64a6a9a21220e1126fa2553b"],
     "teacher": "64a6a31b5605dfc0d2a121ff",
-    "class": "64acfc9ca69d5a98b5f266fc"
-  },
-  {
-    "_id": "64a8850c8a97a7750bb96a55",
-    "subject": "English",
-    "status": "Pending",
-    "students": ["64a6a9a21220e1126fa2553e"],
-    "teacher": "64a6a31b5605dfc0d2a121ff",
     "class": "64acfc9ca69d5a98b5f266fc",
-    "topic": "Literary Exploration",
-    "description": "Read chapters 5-8 and answer the comprehension questions. Engage with the text and analyze its content deeply."
+    "createdAt": "2023-11-13T12:48:32.775Z"
   },
   {
     "_id": "64a8850c8a97a7750bb96a56",
     "subject": "Physics",
+    "topic": "Projectile Motion Problems",
+    "description": "Solve problems 1-15 on projectile motion. Apply mathematical principles to analyze the trajectory of objects.",
+    "startDate": "2023-11-14T12:48:32.775Z",
+    "expirationDate": "2023-11-20T12:48:32.775Z",
     "status": "Pending",
     "students": ["64a6a9a21220e1126fa2553f"],
     "teacher": "64a6a31b5605dfc0d2a121ff",
     "class": "64acfc9ca69d5a98b5f266fc",
-    "topic": "Projectile Motion Problems",
-    "description": "Solve problems 1-15 on projectile motion. Apply mathematical principles to analyze the trajectory of objects."
+    "createdAt": "2023-11-13T12:48:32.775Z"
+  },
+  {
+    "_id": "64a8850c8a97a7750bb96a55",
+    "subject": "English",
+    "topic": "Literary Exploration",
+    "description": "Read chapters 5-8 and answer the comprehension questions. Engage with the text and analyze its content deeply.",
+    "startDate": "2023-11-14T12:48:32.775Z",
+    "expirationDate": "2023-11-20T12:48:32.775Z",
+    "status": "Successful",
+    "students": ["64a6a9a21220e1126fa2553e"],
+    "teacher": "64a6a31b5605dfc0d2a121ff",
+    "class": "64acfc9ca69d5a98b5f266fc",
+    "createdAt": "2023-11-13T12:48:32.775Z"
   },
   {
     "_id": "64a8850c8a97a7750bb96a57",
     "subject": "Geography",
+    "topic": "Continents and Countries",
+    "description": "Create a detailed map of the continents and label major countries. Explore the world's geography.",
+    "startDate": "2023-11-14T12:48:32.775Z",
+    "expirationDate": "2023-11-20T12:48:32.775Z",
     "status": "Pending",
     "students": ["64a6a9a21220e1126fa25540"],
     "teacher": "64a6a31b5605dfc0d2a121fe",
     "class": "64acfc9ca69d5a98b5f266fc",
-    "topic": "Continents and Countries",
-    "description": "Create a detailed map of the continents and label major countries. Explore the world's geography."
+    "createdAt": "2023-11-13T12:48:32.775Z"
   },
   {
     "_id": "64a8850c8a97a7750bb96a58",
     "subject": "Biology",
-    "status": "Pending",
+    "topic": "Human Anatomy Report",
+    "description": "Research and write a comprehensive report on the intricacies of human anatomy.",
+    "startDate": "2023-11-14T12:48:32.775Z",
+    "expirationDate": "2023-11-20T12:48:32.775Z",
+    "status": "Successful",
     "students": ["64a6a9a21220e1126fa25541"],
     "teacher": "64a6a31b5605dfc0d2a121fe",
     "class": "64acfc9ca69d5a98b5f266fc",
-    "topic": "Human Anatomy Report",
-    "description": "Research and write a comprehensive report on the intricacies of human anatomy."
-  },
-  {
-    "_id": "64a8850c8a97a7750bb96a59",
-    "subject": "Art",
-    "status": "Pending",
-    "students": ["64a6a9a21220e1126fa25543"],
-    "teacher": "64a6a31b5605dfc0d2a121fe",
-    "class": "64acfc9ca69d5a98b5f266fd",
-    "topic": "Pencil Shading Still Life",
-    "description": "Create a visually captivating still life composition using pencil shading techniques."
-  },
-  {
-    "_id": "64a8850c8a97a7750bb96a5a",
-    "subject": "Music",
-    "status": "Pending",
-    "students": ["64a6a9a21220e1126fa25542"],
-    "teacher": "64a6a31b5605dfc0d2a121fe",
-    "class": "64acfc9ca69d5a98b5f266fd",
-    "topic": "Melodic Composition",
-    "description": "Compose a captivating and harmonious melody in the key of C major."
-  },
-  {
-    "_id": "64a8850c8a97a7750bb96a5b",
-    "subject": "Physical Education",
-    "status": "Pending",
-    "students": ["64a6a9a21220e1126fa25544"],
-    "teacher": "64a6a31b5605dfc0d2a121fe",
-    "class": "64acfc9ca69d5a98b5f266fd",
-    "topic": "Stretching Exercise Video",
-    "description": "Record a comprehensive video demonstrating various stretching exercises."
+    "createdAt": "2023-11-13T12:48:32.775Z"
   },
   {
     "_id": "64a8850c8a97a7750bb96a5c",
     "subject": "Computer Science",
+    "topic": "Factorial Calculation Program",
+    "description": "Develop a program to calculate the factorial of a given number using programming concepts.",
+    "startDate": "2023-11-14T12:48:32.775Z",
+    "expirationDate": "2023-11-20T12:48:32.775Z",
     "status": "Pending",
     "students": ["64a6a9a21220e1126fa25545"],
     "teacher": "64a6a31b5605dfc0d2a12200",
     "class": "64acfc9ca69d5a98b5f266fd",
-    "topic": "Factorial Calculation Program",
-    "description": "Develop a program to calculate the factorial of a given number using programming concepts."
+    "createdAt": "2023-11-13T12:48:32.775Z"
+  },
+  {
+    "_id": "64a8850c8a97a7750bb96a5b",
+    "subject": "Physical Education",
+    "topic": "Stretching Exercise Video",
+    "description": "Record a comprehensive video demonstrating various stretching exercises.",
+    "startDate": "2023-11-14T12:48:32.775Z",
+    "expirationDate": "2023-11-20T12:48:32.775Z",
+    "status": "Failed",
+    "students": ["64a6a9a21220e1126fa25544"],
+    "teacher": "64a6a31b5605dfc0d2a121fe",
+    "class": "64acfc9ca69d5a98b5f266fd",
+    "createdAt": "2023-11-13T12:48:32.775Z"
   },
   {
     "_id": "64a8850c8a97a7750bb96a5d",
     "subject": "Chemistry",
+    "topic": "Titrating Acid Concentration",
+    "description": "Conduct a titration experiment to accurately determine the concentration of a given acid.",
+    "startDate": "2023-11-14T12:48:32.775Z",
+    "expirationDate": "2023-11-20T12:48:32.775Z",
     "status": "Pending",
     "students": ["64a6a9a21220e1126fa25546"],
     "teacher": "64a6a31b5605dfc0d2a12200",
     "class": "64acfc9ca69d5a98b5f266fd",
-    "topic": "Titrating Acid Concentration",
-    "description": "Conduct a titration experiment to accurately determine the concentration of a given acid."
+    "createdAt": "2023-11-13T12:48:32.775Z"
   },
   {
     "_id": "64a8850c8a97a7750bb96a5e",
     "subject": "Literature",
+    "topic": "Character Analysis",
+    "description": "Read 'To Kill a Mockingbird' and craft a comprehensive character analysis.",
+    "startDate": "2023-11-14T12:48:32.775Z",
+    "expirationDate": "2023-11-20T12:48:32.775Z",
     "status": "Pending",
     "students": ["64a6a9a21220e1126fa25547"],
     "teacher": "64a6a31b5605dfc0d2a12200",
     "class": "64acfc9ca69d5a98b5f266fe",
-    "topic": "Character Analysis",
-    "description": "Read 'To Kill a Mockingbird' and craft a comprehensive character analysis."
+    "createdAt": "2023-11-13T12:48:32.775Z"
   },
   {
     "_id": "64a8850c8a97a7750bb96a5f",
     "subject": "Physical Education",
-    "status": "Pending",
+    "topic": "5K Run Challenge",
+    "description": "Participate in a challenging 5K run and record your completion time for a healthy and active lifestyle.",
+    "startDate": "2023-11-14T12:48:32.775Z",
+    "expirationDate": "2023-11-20T12:48:32.775Z",
+    "status": "Failed",
     "students": ["64a6a9a21220e1126fa25548"],
     "teacher": "64a6a31b5605dfc0d2a12200",
     "class": "64acfc9ca69d5a98b5f266fe",
-    "topic": "5K Run Challenge",
-    "description": "Participate in a challenging 5K run and record your completion time for a healthy and active lifestyle."
+    "createdAt": "2023-11-13T12:48:32.775Z"
   },
   {
     "_id": "64a8850c8a97a7750bb96a60",
     "subject": "Foreign Language",
-    "status": "Pending",
+    "topic": "Vocabulary Flashcards Practice",
+    "description": "Devote 20 minutes daily to practice foreign language vocabulary using interactive flashcards.",
+    "startDate": "2023-11-14T12:48:32.775Z",
+    "expirationDate": "2023-11-20T12:48:32.775Z",
+    "status": "Failed",
     "students": ["64a6a9a21220e1126fa25549"],
     "teacher": "64a6a31b5605dfc0d2a12200",
     "class": "64acfc9ca69d5a98b5f266fe",
-    "topic": "Vocabulary Flashcards Practice",
-    "description": "Devote 20 minutes daily to practice foreign language vocabulary using interactive flashcards."
+    "createdAt": "2023-11-13T12:48:32.775Z"
   },
   {
     "_id": "64a8850c8a97a7750bb96a52",
     "subject": "Mathematics",
+    "topic": "Page 56 Exercises",
+    "description": "Complete exercises 1-10 on page 56 to reinforce mathematical problem-solving skills.",
+    "startDate": "2023-11-14T12:48:32.775Z",
+    "expirationDate": "2023-11-20T12:48:32.775Z",
     "status": "Pending",
     "students": ["64a6a9a21220e1126fa2553c"],
     "teacher": "64a6a31b5605dfc0d2a121ff",
     "class": "64acfc9ca69d5a98b5f266fe",
-    "topic": "Page 56 Exercises",
-    "description": "Complete exercises 1-10 on page 56 to reinforce mathematical problem-solving skills."
+    "createdAt": "2023-11-13T12:48:32.775Z"
   },
   {
     "_id": "64a8850c8a97a7750bb96a53",
     "subject": "History",
-    "status": "Pending",
+    "topic": "Causes of World War II",
+    "description": "Write a concise essay exploring the significant causes and events leading to World War II.",
+    "startDate": "2023-11-14T12:48:32.775Z",
+    "expirationDate": "2023-11-20T12:48:32.775Z",
+    "status": "Evaluating",
     "students": ["64a6a9a21220e1126fa2552a"],
     "teacher": "64a6a31b5605dfc0d2a121ff",
     "class": "64acfc9ca69d5a98b5f266fe",
-    "topic": "Causes of World War II",
-    "description": "Write a concise essay exploring the significant causes and events leading to World War II."
+    "createdAt": "2023-11-13T12:48:32.775Z"
+  },
+  {
+    "_id": "64a8850c8a97a7750bb96a59",
+    "subject": "Art",
+    "topic": "Pencil Shading Still Life",
+    "description": "Create a visually captivating still life composition using pencil shading techniques.",
+    "startDate": "2023-11-14T12:48:32.775Z",
+    "expirationDate": "2023-11-20T12:48:32.775Z",
+    "status": "Evaluating",
+    "students": ["64a6a9a21220e1126fa25543"],
+    "teacher": "64a6a31b5605dfc0d2a121fe",
+    "class": "64acfc9ca69d5a98b5f266fd",
+    "createdAt": "2023-11-13T12:48:32.775Z"
+  },
+  {
+    "_id": "64a8850c8a97a7750bb96a5a",
+    "subject": "Music",
+    "topic": "Melodic Composition",
+    "description": "Compose a captivating and harmonious melody in the key of C major.",
+    "startDate": "2023-11-14T12:48:32.775Z",
+    "expirationDate": "2023-11-20T12:48:32.775Z",
+    "status": "Evaluating",
+    "students": ["64a6a9a21220e1126fa25542"],
+    "teacher": "64a6a31b5605dfc0d2a121fe",
+    "class": "64acfc9ca69d5a98b5f266fd",
+    "createdAt": "2023-11-13T12:48:32.775Z"
   }
 ]

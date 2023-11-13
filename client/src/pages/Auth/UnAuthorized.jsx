@@ -1,6 +1,7 @@
 import { BsEyeSlash } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
+import { useAuth } from "../../context/AuthProvider";
 
 const StyledSection = styled.section`
   width: 100vw;
@@ -29,14 +30,20 @@ const StyledSection = styled.section`
 `;
 
 const UnAuthorized = () => {
+  const { user } = useAuth();
   const navigate = useNavigate();
-
   return (
     <StyledSection>
       <BsEyeSlash />
       <h1>UnAuthorized</h1>
       <p>You do not have access to the this page.</p>
-      <button onClick={() => navigate(-1)}>Click here to go back</button>
+      <button
+        onClick={() => {
+          user ? navigate("/") : navigate("/login");
+        }}
+      >
+        Click here to go back
+      </button>
     </StyledSection>
   );
 };

@@ -10,8 +10,6 @@ const studentRouter = require("../routes/studentRouter");
 
 const teacherRouter = Router();
 
-//TODO update Homework for spesific student , for example expiration date of homework etc.
-
 teacherRouter.use("/:teacherId/homeworks", homeworkRouter);
 teacherRouter.use("/:teacherId/students", studentRouter);
 

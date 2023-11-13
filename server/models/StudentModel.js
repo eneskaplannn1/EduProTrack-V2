@@ -13,10 +13,9 @@ const StudentSchema = new mongoose.Schema({
     required: [true, "Student must have a username!"],
     unique: true,
   },
-  phoneNum: {
+  phone: {
     type: String,
     required: [true, "Student must have a phone number!"],
-    validate: [validator.isMobilePhone, "Please provide valid phone number"],
   },
   gender: {
     type: "String",
@@ -79,10 +78,6 @@ const StudentSchema = new mongoose.Schema({
   passwordChangedAt: Date,
   passwordResetToken: String,
   passwordResetExpires: Date,
-  verified: {
-    type: Boolean,
-    default: false,
-  },
 });
 
 StudentSchema.pre(/^find/, function (next) {

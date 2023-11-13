@@ -9,14 +9,6 @@ const Admin = require("../models/AdminModel");
 const jwt = require("jsonwebtoken");
 const crypto = require("crypto");
 
-exports.signup = catchAsync(async (req, res, next) => {
-  //Todo signup
-});
-
-exports.verifyAccount = catchAsync(async (req, res, next) => {
-  //Todo verifyAccount
-});
-
 const signToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRES_IN,
@@ -28,7 +20,6 @@ const createSendToken = (user, statusCode, res) => {
   const cookieOptions = {
     expires: new Date(Date.now() + process.env.COOKIE_EXPIRES_IN * 1000),
     httpOnly: true,
-    sameSite: "Lax",
   };
   // if (process.env.NODE_ENV === "production") cookieOptions.secure = true;
   user.password = undefined;
@@ -72,7 +63,7 @@ exports.login = catchAsync(async (req, res, next) => {
 });
 
 exports.logout = (req, res) => {
-  res.cookie("jwt", "logout", { expires: new Date(Date.now() + 1000) });
+  res.cookie("jwt", "logout", { expires: new Date(Date.now()) });
   res.status(200).json({
     status: "success",
   });
@@ -149,7 +140,7 @@ exports.logUserIn = catchAsync(async (req, res, next) => {
   if (req.cookies.jwt) {
     token = req.cookies.jwt;
   }
-
+  console.log(token);
   // If no token is found, throw an error indicating that the user is not logged in
   if (!token) {
     next(
@@ -159,7 +150,7 @@ exports.logUserIn = catchAsync(async (req, res, next) => {
 
   // Verify the token using the JWT_SECRET and decode its payload
   const decoded = await jwt.verify(token, process.env.JWT_SECRET);
-
+  console.log(decoded);
   // Find the user in the database based on the decoded user id
   let user = await Student.findOne({ _id: decoded.id });
 
@@ -208,7 +199,6 @@ exports.isLoggenIn = catchAsync(async (req, res, next) => {
         return next(
           new AppError("User changed his password , please log in again")
         );
-
       // THERE IS A LOGGED IN USER
       req.user = user;
       res.locals.user = user;

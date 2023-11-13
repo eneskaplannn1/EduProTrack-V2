@@ -32,14 +32,14 @@ export const updateStudent = async function ({ data, id }) {
     username: data.username,
     email: data.email,
     age: data.age,
-    phoneNum: data.phoneNum,
+    phone: data.phone,
     gender: data.gender,
   };
 
   try {
     return await customRequst.patch(`/students/${id}`, refactoredData);
   } catch (err) {
-    throw new Error(err);
+    throw new Error(err.response.data.message);
   }
 };
 

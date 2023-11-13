@@ -14,7 +14,7 @@ function Login() {
   return (
     <StyledAuthContainer>
       <StyledLoginImageContainer>
-        <img src="/login2.jpg" />
+        <img src="/initial.jpg" />
       </StyledLoginImageContainer>
       <StyledLoginForm onSubmit={handleSubmit(onSubmitForm)}>
         <StyledFormHead>

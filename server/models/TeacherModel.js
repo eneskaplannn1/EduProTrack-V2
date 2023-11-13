@@ -13,10 +13,9 @@ const TeacherSchema = new mongoose.Schema({
     required: [true, "Teacher must have a username!"],
     unique: true,
   },
-  phoneNum: {
+  phone: {
     type: String,
     required: [true, "Teacher must have a phone number!"],
-    validate: [validator.isMobilePhone, "Please provide valid phone number"],
   },
   photo: {
     type: String,
@@ -75,10 +74,6 @@ const TeacherSchema = new mongoose.Schema({
   passwordChangedAt: Date,
   passwordResetToken: String,
   passwordResetExpires: Date,
-  verified: {
-    type: Boolean,
-    default: false,
-  },
   createdAt: {
     type: Date,
     default: Date.now(),

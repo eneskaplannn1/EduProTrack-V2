@@ -55,12 +55,12 @@ function TeacherForm({ onCloseModal, isEditing, TeacherToEdit = {} }) {
           {...register("address", { required: "Enter teacher's address" })}
         />
       </FormRow>
-      <FormRow label="phoneNum" error={errors?.phoneNum?.message}>
+      <FormRow label="phone" error={errors?.phone?.message}>
         <Input
           disabled={isManupulating}
           type="text"
-          id="phoneNum"
-          {...register("phoneNum", {
+          id="phone"
+          {...register("phone", {
             required: "Enter teacher's phone number",
           })}
         />

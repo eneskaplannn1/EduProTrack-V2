@@ -20,11 +20,13 @@ exports.updateMe = catchAsync(async (req, res, next) => {
     "email",
     "username",
     "age",
-    "phoneNum",
+    "phone",
     "gender",
     "address"
   );
   let updatedUser;
+
+  console.log(req.user);
 
   if (req.user.role === "Student")
     updatedUser = await Student.findByIdAndUpdate(req.user._id, filteredObj, {
@@ -36,6 +38,8 @@ exports.updateMe = catchAsync(async (req, res, next) => {
       new: true,
       runValidators: true,
     });
+
+  console.log(updatedUser);
 
   res.status(200).json({
     status: "success",

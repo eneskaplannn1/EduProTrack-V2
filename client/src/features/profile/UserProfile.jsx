@@ -19,7 +19,7 @@ function UserProfile() {
           <>
             <li>Gender : {user.gender}</li>
             <li>Age : {user.age}</li>
-            <li>Phone : {user.phoneNum}</li>
+            <li>Phone : {user.phone}</li>
           </>
         )}
 

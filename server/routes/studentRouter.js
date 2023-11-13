@@ -18,7 +18,7 @@ const { protect } = require("../controllers/authController");
 
 studentRouter.use("/:studentId/homeworks", homeworkRouter);
 
-// studentRouter.use(protect);
+studentRouter.use(protect);
 
 studentRouter.get("/getMe", userController.getMe, studentController.getStudent);
 studentRouter.patch("/updateMe", userController.updateMe);

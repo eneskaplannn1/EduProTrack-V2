@@ -7,19 +7,19 @@ const sendErrorDev = (err, req, res) => {
     error: err,
     stack: err.stack,
   });
-  // if (req.originalUrl.startsWith("/api")) {
-  //   return res.status(err.statusCode).json({
-  //     status: err.status,
-  //     message: err.message,
-  //     error: err,
-  //     stack: err.stack,
-  //   });
-  // }
+  if (req.originalUrl.startsWith("/api")) {
+    return res.status(err.statusCode).json({
+      status: err.status,
+      message: err.message,
+      error: err,
+      stack: err.stack,
+    });
+  }
 
-  // res.status(err.statusCode).render("error", {
-  //   title: "Something went wrong!",
-  //   msg: err.message,
-  // });
+  res.status(err.statusCode).render("error", {
+    title: "Something went wrong!",
+    msg: err.message,
+  });
 };
 
 const sendErrorProduction = (err, req, res) => {
@@ -85,7 +85,6 @@ const handleExpiredJWT = () =>
 module.exports = (err, req, res, next) => {
   let error = Object.assign(err); // ! çözüm 2
 
-  // console.log(error);
   if (error.name === "Error") error = handleError(error);
   if (error.name === "CastError") error = handleCastError(error);
   if (error.name === "ValidationError") error = handleValidationErr(error);

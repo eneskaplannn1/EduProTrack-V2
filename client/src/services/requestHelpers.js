@@ -11,9 +11,11 @@ export const updatePassword = async function (body) {
 
 export const updateMe = async function (body) {
   const { model, data } = body;
+  console.log(model);
   try {
     return await customRequst.patch(`/${model}/updateMe`, data);
   } catch (err) {
+    console.log(err);
     throw new Error(err.response.data.message);
   }
 };

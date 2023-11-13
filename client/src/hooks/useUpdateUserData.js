@@ -1,13 +1,15 @@
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { updateMe } from "../services/requestHelpers";
 import { toast } from "react-hot-toast";
 
 function useUpdateUserData({ user, updateUser }) {
+  const queryClient = useQueryClient();
   const {
     handleSubmit,
     register,
     formState: { errors },
+    reset,
   } = useForm({
     defaultValues: user,
   });
@@ -20,6 +22,7 @@ function useUpdateUserData({ user, updateUser }) {
     ],
     onSuccess: (data) => {
       updateUser(data.data.data.updatedUser);
+      queryClient.invalidateQueries(["login"]);
       toast.success("Your informations updated successfully");
     },
     onError: (err) => {
@@ -28,6 +31,10 @@ function useUpdateUserData({ user, updateUser }) {
   });
 
   function handleSubmitForm(data) {
+    if (user.role === "Admin") {
+      reset();
+      return toast.error("Admins cannot be updated");
+    }
     updateInfo({
       model: `${user.role === "Student" ? "students" : "teachers"}`,
       id: user._id,

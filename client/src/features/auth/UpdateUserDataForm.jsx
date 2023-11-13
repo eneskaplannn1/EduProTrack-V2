@@ -5,8 +5,11 @@ import Button from "../../UI/Button/Button";
 import useUpdateUserData from "../../hooks/useUpdateUserData";
 import FormRow from "../../UI/FormRow";
 import Input from "../../UI/Input";
+import { useAuth } from "../../context/AuthProvider";
 
-function UpdateUserDataForm({ user, updateUser }) {
+function UpdateUserDataForm() {
+  const { user, updateUser } = useAuth();
+
   const { handleSubmitForm, isUpdating, handleSubmit, errors, register } =
     useUpdateUserData({ user, updateUser });
 
@@ -43,13 +46,13 @@ function UpdateUserDataForm({ user, updateUser }) {
         </FormRow>
         {user.role !== "Admin" && (
           <>
-            <FormRow label="PhoneNum" error={errors?.phoneNum?.message}>
+            <FormRow label="Phone number" error={errors?.phone?.message}>
               <Input
                 disabled={isUpdating}
                 type="text"
-                id="phoneNum"
+                id="phone"
                 placeholder="John Doe"
-                {...register("phoneNum", {
+                {...register("phone", {
                   required: "Enter your phone number",
                 })}
               />
@@ -65,11 +68,6 @@ function UpdateUserDataForm({ user, updateUser }) {
             </FormRow>
           </>
         )}
-        {/* <FormElement>
-          <label htmlFor="avatar">Avatar Image</label>
-          <input
-          disabled={isUpdating} type="file" id="avatar" accept="image/*"  />
-        </FormElement> */}
         <Button size="large" variation="blue" disabled={isUpdating}>
           {isUpdating ? "Updating account" : "Update account"}
         </Button>

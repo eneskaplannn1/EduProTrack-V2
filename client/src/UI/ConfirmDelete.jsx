@@ -21,7 +21,13 @@ const StyledConfirmDelete = styled.div`
   }
 `;
 
-function ConfirmDelete({ resourceName, onConfirm, disabled, onCloseModal }) {
+function ConfirmDelete({
+  resourceName,
+  onConfirm,
+  disabled,
+  onCloseModal,
+  isDeleting,
+}) {
   return (
     <StyledConfirmDelete>
       <h3>Delete {resourceName}</h3>
@@ -44,7 +50,7 @@ function ConfirmDelete({ resourceName, onConfirm, disabled, onCloseModal }) {
           disabled={disabled}
           onClick={onConfirm}
         >
-          Delete
+          {isDeleting ? "Deleting teacher..." : "Delete"}
         </Button>
       </div>
     </StyledConfirmDelete>

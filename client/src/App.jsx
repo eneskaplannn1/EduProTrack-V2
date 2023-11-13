@@ -14,7 +14,7 @@ import StudentDetail from "./features/Student/StudentDetail";
 import HomeworkDetail from "./features/homework/HomeworkDetail";
 
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { QueryClientProvider, useQuery } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { Toaster } from "react-hot-toast";
 import { useAuth } from "./context/AuthProvider";
 import RequiredAuth from "./features/auth/RequiredAuth";
@@ -27,16 +27,15 @@ import { DarkModeProvider } from "./context/DarkmodeProvider";
 import { LoginWithJWT } from "./services/apiAuth";
 
 function App() {
-  const { login } = useAuth();
-  const { isLoading } = useQuery({
+  const { login, user } = useAuth();
+  useQuery({
     queryKey: ["login"],
     queryFn: LoginWithJWT,
     onSuccess: (data) => {
-      login(data);
+      if (user) login(user);
+      return login(data);
     },
   });
-
-  if (isLoading) return;
 
   return (
     <DarkModeProvider>

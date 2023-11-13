@@ -72,12 +72,12 @@ function StudentForm({
           {...register("age", { required: "Enter your age" })}
         />
       </FormRow>
-      <FormRow label="phoneNum" error={errors?.phoneNum?.message}>
+      <FormRow label="phone" error={errors?.phone?.message}>
         <Input
           disabled={isManipulating}
           type="tel"
-          id="phoneNum"
-          {...register("phoneNum", { required: "Enter your phone number" })}
+          id="phone"
+          {...register("phone", { required: "Enter your phone number" })}
         />
       </FormRow>
       <FormRow label="Gender" error={errors?.gender?.message}>

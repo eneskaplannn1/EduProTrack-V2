@@ -3,8 +3,10 @@ import customRequst from "../utils/customRequest";
 export const getTeachers = async function () {
   try {
     const res = await customRequst.get(`/teachers`);
+    console.log(res);
     return res;
   } catch (err) {
+    console.log(err);
     throw new Error(err);
   }
 };
@@ -22,7 +24,8 @@ export const updateTeacher = async function (body) {
   try {
     return await customRequst.patch(`/teachers/${id}`, data);
   } catch (err) {
-    throw new Error(err);
+    console.log(err);
+    throw new Error(err.response.data.message);
   }
 };
 
@@ -37,9 +40,11 @@ export const createTeacher = async function ({ data }) {
 
 export const deleteTeacher = async function ({ _id }) {
   try {
-    return await customRequst.patch(`/teachers/${_id}`, {
+    const res = await customRequst.patch(`/teachers/${_id}`, {
       active: false,
     });
+    console.log(res);
+    return res;
   } catch (err) {
     throw new Error(err.response.data.message);
   }

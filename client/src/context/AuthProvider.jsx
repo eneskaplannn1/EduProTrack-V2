@@ -1,6 +1,5 @@
-import { createContext, useContext, useEffect, useReducer } from "react";
-import { LoginWithJWT } from "../services/apiAuth";
-import { toast } from "react-hot-toast";
+import { createContext, useContext, useReducer } from "react";
+import { HandleLogout } from "../services/apiAuth";
 
 const authContext = createContext();
 
@@ -9,7 +8,10 @@ const initialState = {
 };
 
 function reducer(state, action) {
-  if (action.type === "login") return { user: { ...action.payload } };
+  if (action.type === "login")
+    return {
+      user: { ...action.payload },
+    };
   if (action.type === "logout") return { ...initialState };
   if (action.type === "update-user") return { user: action.payload };
   if (action.type === "login-with-jwt") return { user: { ...action.payload } };
@@ -19,10 +21,10 @@ function AuthProvider({ children }) {
   const [{ user }, dispatch] = useReducer(reducer, initialState);
 
   const login = function (user) {
-    console.log(user);
     dispatch({ type: "login", payload: user });
   };
-  const logout = function () {
+  const logout = async function () {
+    await HandleLogout();
     dispatch({ type: "logout" });
   };
   const updateUser = function (user) {
