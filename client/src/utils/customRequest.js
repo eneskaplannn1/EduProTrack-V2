@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const customRequst = axios.create({
-  baseURL: "http://localhost:3000/api/v1",
+  baseURL: "https://eduprotrack-server.onrender.com/api/v1",
   // ö  baseURL: "https://eduprotrack-server.onrender.com/api/v1",
   withCredentials: true,
 });
