@@ -21,6 +21,12 @@ const HomeworkSchema = new mongoose.Schema(
     expirationDate: {
       type: Date,
       default: new Date(Date.now() + 60 * 1000 * 60 * 24 * 7),
+      validate: {
+        validator: function (value) {
+          return value > this.startDate;
+        },
+        message: "Expiration date must be greater than the start date",
+      },
     },
     status: {
       type: String,

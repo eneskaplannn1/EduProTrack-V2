@@ -30,21 +30,10 @@ app.use(
   })
 );
 
-// app.use((req, res, next) => {
-//   //! BU KISIM BENCE COK ONEMLI ZAMAN HARCAMAYA DEĞER!!!
-//   //! BU KISIM BENCE COK ONEMLI ZAMAN HARCAMAYA DEĞER!!!
-//   //! BU KISIM BENCE COK ONEMLI ZAMAN HARCAMAYA DEĞER!!!
-//   // res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
-//   res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
-//   res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE,PATCH"); // "DELETE" ekledik
-//   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-//   next();
-// });
-
 app.use(express.json());
 app.use(cookieParser());
 
-// set Security HTTP header
+// Set Security HTTP header
 app.use(
   helmet({
     contentSecurityPolicy: false,
@@ -89,10 +78,3 @@ app.use("/api/v1/homeworks", homeworkRouter);
 app.use(GlobalErrorHandler);
 
 module.exports = app;
-
-// app.get("/set-cookie", (req, res) => {
-//   res.cookie(
-//     "jwt",
-//     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTZhMzFiNTYwNWRmYzBkMmExMjFmZiIsImlhdCI6MTY5Mjg5MzczNSwiZXhwIjoxNjkyOTgwMTM1fQ.Mbo2-txKiMy-BiIOjUhsLIfGh-h4yTho8U8QEfj1yUw"
-//   );
-// });

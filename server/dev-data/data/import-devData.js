@@ -9,8 +9,7 @@ const Class = require("../../models/ClassModel");
 
 const fs = require("fs");
 
-// const User = require("../../models/Users");
-
+// const User = require("../../models/Users")
 const teachers = JSON.parse(
   fs.readFileSync(`${__dirname}/teachers-data.json`, "utf-8")
 );
@@ -32,11 +31,11 @@ connectToDatabase();
 const importData = async () => {
   try {
     console.log("Creating data");
-    // await Admin.create(admins, { validateBeforeSave: false });
-    // await Teacher.create(teachers, { validateBeforeSave: false });
+    await Admin.create(admins, { validateBeforeSave: false });
+    await Teacher.create(teachers, { validateBeforeSave: false });
     await Homework.create(homeworks, { validateBeforeSave: false });
-    // await Student.create(students, { validateBeforeSave: false });
-    // await Class.create(classes, { validateBeforeSave: false });
+    await Student.create(students, { validateBeforeSave: false });
+    await Class.create(classes, { validateBeforeSave: false });
     console.log("Data created");
 
     process.exit();
@@ -47,11 +46,11 @@ const importData = async () => {
 const DeleteDatas = async () => {
   try {
     console.log("Deleting data");
-    // await Admin.deleteMany();
-    // await Teacher.deleteMany();
-    // await Class.deleteMany();
+    await Admin.deleteMany();
+    await Teacher.deleteMany();
+    await Class.deleteMany();
     await Homework.deleteMany();
-    // await Student.deleteMany();
+    await Student.deleteMany();
     console.log("Data Deleted");
 
     process.exit();

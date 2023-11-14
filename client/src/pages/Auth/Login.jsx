@@ -93,6 +93,7 @@ const StyledLoginImageContainer = styled.div`
 `;
 
 const Copyright = styled.div`
+  text-align: center;
   position: absolute;
   bottom: 5rem;
 
@@ -101,10 +102,8 @@ const Copyright = styled.div`
 
   a {
     transition: 0.4s ease;
-  }
 
-  &:hover {
-    a {
+    &:hover {
       color: #ea580c;
     }
   }

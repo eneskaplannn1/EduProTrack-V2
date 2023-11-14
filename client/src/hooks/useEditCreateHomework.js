@@ -67,7 +67,13 @@ function useEditCreateHomework({
       id: homeworkId,
     });
   }
-  return { register, handleSubmit, errors, handleSubmitForm, isManupulating };
+  return {
+    register,
+    handleSubmit,
+    errors,
+    handleSubmitForm,
+    isManupulating,
+  };
 }
 
 export default useEditCreateHomework;

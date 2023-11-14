@@ -18,7 +18,12 @@ function useLogin() {
     register,
     formState: { errors },
     handleSubmit,
-  } = useForm();
+  } = useForm({
+    defaultValues: {
+      email: "exampleAdmin@gmail.com",
+      password: "pass1234",
+    },
+  });
 
   const { mutate, isLoading } = useMutation({
     mutationFn: HandleLogin,
