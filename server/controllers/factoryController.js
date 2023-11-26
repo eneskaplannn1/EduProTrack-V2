@@ -60,11 +60,9 @@ exports.updateOne = (Model) =>
     const doc = await Model.findByIdAndUpdate(
       { _id: req.params.id },
       req.body,
-      {
-        new: true,
-        runValidators: true,
-      }
+      {}
     );
+    console.log(doc);
     if (!doc) return next(new AppError("No document find by that id ", 404));
 
     res.status(200).json({

@@ -47,9 +47,7 @@ function useEditCreateHomework({
         reset();
         onCloseModal();
       },
-      onError: (err) => {
-        toast.error(err.message);
-      },
+      onError: (err) => {},
     }
   );
 

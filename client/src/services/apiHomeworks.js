@@ -43,8 +43,10 @@ export const updateHomework = async function (body) {
   };
   try {
     const res = await customRequst.patch(`/homeworks/${id}`, refactoredData);
+    console.log(res);
     return res;
   } catch (err) {
+    console.log(err);
     throw new Error(err.response.data.message);
   }
 };

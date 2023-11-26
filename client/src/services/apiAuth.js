@@ -32,7 +32,6 @@ export const LoginWithJWT = async function () {
     const res = await customRequst.get("/auth/logUserIn", {
       withCredentials: true,
     });
-    console.log(res);
     return res.data;
   } catch (err) {
     throw new Error(err.response.data.message);
