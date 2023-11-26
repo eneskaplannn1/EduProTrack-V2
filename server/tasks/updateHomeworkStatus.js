@@ -3,7 +3,7 @@ const cron = require("node-cron");
 const connectDB = require("../utilities/connectDB");
 const Homework = require("../models/HomeworkModel");
 
-cron.schedule("* * * * *", async () => {
+cron.schedule("* * * * * *", async () => {
   connectDB();
   const currentDate = new Date();
   console.log("hitted");

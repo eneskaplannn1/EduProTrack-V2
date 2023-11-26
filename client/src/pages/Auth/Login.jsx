@@ -93,10 +93,7 @@ const StyledLoginImageContainer = styled.div`
 `;
 
 const Copyright = styled.div`
-  text-align: center;
-  position: absolute;
-  bottom: 5rem;
-
+  margin: auto auto 0;
   color: var(--color-grey-900);
   font-size: 20px;
 
