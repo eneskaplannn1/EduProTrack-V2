@@ -21,7 +21,7 @@ const StyledListHead = styled.ul`
   justify-content: space-between;
   padding: 1rem 0;
 
-  font-size: 1rem;
+  font-size: 1.8rem;
 
   a {
     justify-self: end;

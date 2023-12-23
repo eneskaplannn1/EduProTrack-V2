@@ -5,6 +5,9 @@ import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { HandleLogin } from "../services/apiAuth";
 import { toast } from "react-hot-toast";
+import { useEffect } from "react";
+
+let initial = true;
 
 function useLogin() {
   const { login } = useAuth();
@@ -13,6 +16,18 @@ function useLogin() {
 
   const { user } = useAuth();
   if (user) navigate(location?.state?.from ? location.state.from : "/");
+
+  useEffect(() => {
+    if (initial && !user) {
+      toast.success(
+        "The initial login process may take up to 30 seconds due to the cloud provider.",
+        {
+          style: { fontSize: "20px", width: "450px" },
+        }
+      );
+    }
+    initial = false;
+  }, [user]);
 
   const {
     register,

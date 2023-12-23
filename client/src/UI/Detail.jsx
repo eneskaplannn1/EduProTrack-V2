@@ -7,8 +7,6 @@ const DetailInfo = styled.ul`
   grid-template-columns: 1fr 1fr;
   gap: 0.8rem;
 
-  margin-bottom: 2rem;
-
   .pending span {
     color: #f3e33b;
   }
@@ -24,13 +22,12 @@ const DetailInfo = styled.ul`
 `;
 
 const DetailImage = styled.div`
-  margin-left: 15rem;
+  margin-left: 30rem;
+
   img {
-    width: 200px;
+    width: 240px;
     border-radius: 50%;
   }
 `;
 
-const DetailItem = styled.li``;
-
-export { DetailInfo, DetailContainer, DetailItem, DetailImage };
+export { DetailInfo, DetailContainer, DetailImage };
